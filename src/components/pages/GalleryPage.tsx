@@ -54,10 +54,10 @@ export default function GalleryPage() {
         <div className="flex items-center space-x-8">
           <Link to="/" className="flex items-center">
             <Image 
-              src="https://static.wixstatic.com/media/eafe55_b752d28a2040412d889baf70e2818e7a~mv2.png?id=logo-gallery"
+              src="https://static.wixstatic.com/media/eafe55_01abbdc5107c43a0a940eb3079eff742~mv2.png"
               alt="JCI Ikeja Logo"
-              width={140}
-              className="h-14 w-auto"
+              width={160}
+              className="h-16 w-auto"
             />
           </Link>
           <div className="hidden md:flex space-x-6">
