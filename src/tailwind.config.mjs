@@ -23,15 +23,15 @@ export default {
                 paragraph: "madefor-display"
             },
             colors: {
-                softaccent: '#D9C6B3',
+                softaccent: '#E8E4DF',
                 buttonbackground: '#1F2937',
-                buttonforeground: '#F0EDE6',
-                bordersubtle: '#D9C6B3',
+                buttonforeground: '#FFFFFF',
+                bordersubtle: '#E8E4DF',
                 foreground: '#1F2937',
                 background: '#FFFFFF',
-                secondary: '#F0EDE6',
+                secondary: '#F9F8F6',
                 'secondary-foreground': '#1F2937',
-                'primary-foreground': '#F0EDE6',
+                'primary-foreground': '#FFFFFF',
                 primary: '#1F2937'
             },
         },
