@@ -44,7 +44,7 @@ export default function BoardPage() {
         <div className="flex items-center space-x-8">
           <Link to="/" className="flex items-center">
             <Image 
-              src="https://static.wixstatic.com/media/eafe55_01abbdc5107c43a0a940eb3079eff742~mv2.png"
+              src="https://static.wixstatic.com/media/eafe55_e8f605345e954984936715bef05b9357~mv2.png"
               alt="JCI Ikeja Logo"
               width={160}
               className="h-16 w-auto"
