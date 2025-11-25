@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Users, Calendar, BookOpen, Camera, Award, Users2, CheckCircle2, Globe } from 'lucide-react';
+import { ArrowRight, Users, Calendar, BookOpen, Camera, Award, Users2, CheckCircle2, Heart } from 'lucide-react';
 
 export default function HomePage() {
   return (
@@ -107,9 +107,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Statistics Section */}
-      <section className="bg-primary py-20">
-        <div className="max-w-[100rem] mx-auto px-6">
+      {/* Statistics Section with Background Image */}
+      <section className="relative w-full py-24 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="https://static.wixstatic.com/media/eafe55_ca25050ab12f4b138cb7be45f0dc0eab~mv2.jpg"
+            alt="Statistics background"
+            width={1600}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/85"></div>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-[100rem] mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-heading text-4xl md:text-5xl text-primary-foreground mb-4">
               We have over 50 years presence in Nigeria
@@ -142,10 +154,10 @@ export default function HomePage() {
             </div>
             <div className="text-center">
               <div className="w-20 h-20 bg-primary-foreground/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Globe className="h-10 w-10 text-cyan-400" />
+                <Heart className="h-10 w-10 text-cyan-400" />
               </div>
-              <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">30+</p>
-              <p className="font-paragraph text-primary-foreground/80">City Presence</p>
+              <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">10000+</p>
+              <p className="font-paragraph text-primary-foreground/80">Lives Impacted</p>
             </div>
           </div>
         </div>
