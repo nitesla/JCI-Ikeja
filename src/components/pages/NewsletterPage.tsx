@@ -60,10 +60,10 @@ export default function NewsletterPage() {
         <div className="flex items-center space-x-8">
           <Link to="/" className="flex items-center">
             <Image 
-              src="https://static.wixstatic.com/media/eafe55_7d49dbb22ce84b0faaabb2d7bccc253a~mv2.jpg"
+              src="https://static.wixstatic.com/media/eafe55_b752d28a2040412d889baf70e2818e7a~mv2.png?id=logo-newsletter"
               alt="JCI Ikeja Logo"
-              width={120}
-              className="h-12 w-auto"
+              width={140}
+              className="h-14 w-auto"
             />
           </Link>
           <div className="hidden md:flex space-x-6">
