@@ -212,7 +212,7 @@ export default function AboutPage() {
             Ready to Make a Difference?
           </h2>
           <p className="font-paragraph text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Join our community of young leaders and help create positive change in Ikeja and beyond.
+            Join our community of young leaders and help create positive change in JCI Ikeja and beyond.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/join">

@@ -274,7 +274,7 @@ export default function NewsletterPage() {
             Stay Connected
           </h2>
           <p className="font-paragraph text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Join our chapter and be part of a community that's making a real difference in Ikeja and beyond.
+            Join our chapter and be part of a community that's making a real difference in JCI Ikeja and beyond.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/join">

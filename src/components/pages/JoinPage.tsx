@@ -174,7 +174,7 @@ export default function JoinPage() {
           </h1>
           <p className="font-paragraph text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
             Become part of a dynamic community of young leaders committed to creating positive 
-            change in Ikeja and beyond through service, leadership, and fellowship.
+            change in JCI Ikeja and beyond through service, leadership, and fellowship.
           </p>
         </div>
       </section>
@@ -403,7 +403,7 @@ export default function JoinPage() {
             <div>
               <h3 className="font-heading text-xl text-primary-foreground mb-4">JCI Ikeja Chapter</h3>
               <p className="font-paragraph text-primary-foreground/80 leading-relaxed">
-                Empowering young leaders to create positive change in Ikeja and beyond through 
+                Empowering young leaders to create positive change in JCI Ikeja and beyond through 
                 community service and professional development.
               </p>
             </div>
