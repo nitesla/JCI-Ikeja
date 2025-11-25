@@ -24,15 +24,15 @@ export default {
             },
             colors: {
                 softaccent: '#E8E4DF',
-                buttonbackground: '#1F2937',
+                buttonbackground: '#2c3e50',
                 buttonforeground: '#FFFFFF',
                 bordersubtle: '#E8E4DF',
-                foreground: '#1F2937',
+                foreground: '#2c3e50',
                 background: '#FFFFFF',
                 secondary: '#F9F8F6',
-                'secondary-foreground': '#1F2937',
+                'secondary-foreground': '#2c3e50',
                 'primary-foreground': '#FFFFFF',
-                primary: '#1F2937'
+                primary: '#2c3e50'
             },
         },
     },
