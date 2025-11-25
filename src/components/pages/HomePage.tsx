@@ -124,10 +124,10 @@ export default function HomePage() {
         <div className="relative z-10 max-w-[100rem] mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-heading text-4xl md:text-5xl text-primary-foreground mb-4">
-              We have over 50 years presence in Nigeria
+              Transforming Communities Through Leadership
             </h2>
             <p className="font-paragraph text-lg text-primary-foreground/80">
-              We are young enterprising leaders.
+              Over 65 years of excellence in developing young leaders and creating lasting impact.
             </p>
           </div>
           <div className="grid md:grid-cols-4 gap-8">
