@@ -24,7 +24,7 @@ export default {
             },
             colors: {
                 softaccent: '#E8E4DF',
-                buttonbackground: '#2c3e50',
+                buttonbackground: '#152644',
                 buttonforeground: '#FFFFFF',
                 bordersubtle: '#E8E4DF',
                 foreground: '#2c3e50',
@@ -32,7 +32,7 @@ export default {
                 secondary: '#F9F8F6',
                 'secondary-foreground': '#2c3e50',
                 'primary-foreground': '#FFFFFF',
-                primary: '#2c3e50'
+                primary: '#152644'
             },
         },
     },
