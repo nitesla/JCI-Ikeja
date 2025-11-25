@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Users, Calendar, BookOpen, Camera } from 'lucide-react';
+import { ArrowRight, Users, Calendar, BookOpen, Camera, Award, Users2, CheckCircle2, Globe } from 'lucide-react';
 
 export default function HomePage() {
   return (
@@ -103,6 +103,50 @@ export default function HomePage() {
                 Become a Member
               </Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics Section */}
+      <section className="bg-primary py-20">
+        <div className="max-w-[100rem] mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="font-heading text-4xl md:text-5xl text-primary-foreground mb-4">
+              We have over 50 years presence in Nigeria
+            </h2>
+            <p className="font-paragraph text-lg text-primary-foreground/80">
+              We are young enterprising leaders.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary-foreground/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Award className="h-10 w-10 text-cyan-400" />
+              </div>
+              <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">65+</p>
+              <p className="font-paragraph text-primary-foreground/80">Years of Excellence</p>
+            </div>
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary-foreground/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users2 className="h-10 w-10 text-cyan-400" />
+              </div>
+              <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">5000+</p>
+              <p className="font-paragraph text-primary-foreground/80">Membership</p>
+            </div>
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary-foreground/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle2 className="h-10 w-10 text-cyan-400" />
+              </div>
+              <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">120+</p>
+              <p className="font-paragraph text-primary-foreground/80">Projects Completed</p>
+            </div>
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary-foreground/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Globe className="h-10 w-10 text-cyan-400" />
+              </div>
+              <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">30+</p>
+              <p className="font-paragraph text-primary-foreground/80">City Presence</p>
+            </div>
           </div>
         </div>
       </section>
