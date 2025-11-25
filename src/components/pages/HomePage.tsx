@@ -47,7 +47,7 @@ export default function HomePage() {
         {/* Background Images - Asymmetrically Placed */}
         <div className="absolute top-16 left-8 w-32 h-40 rounded-lg overflow-hidden">
           <Image 
-            src="https://static.wixstatic.com/media/eafe55_5aba38b36a5748129fb6919940d58beb~mv2.png?originWidth=128&originHeight=192"
+            src="https://static.wixstatic.com/media/eafe55_ca25050ab12f4b138cb7be45f0dc0eab~mv2.jpg"
             alt="Leadership meeting"
             width={128}
             className="w-full h-full object-cover"
@@ -56,7 +56,7 @@ export default function HomePage() {
 
         <div className="absolute bottom-20 left-16 w-40 h-48 rounded-lg overflow-hidden">
           <Image 
-            src="https://static.wixstatic.com/media/eafe55_03c39a7125ef41b2a1e13bc65f24cda8~mv2.png?originWidth=128&originHeight=192"
+            src="https://static.wixstatic.com/media/eafe55_02e52875f7d547358cc367dd2aa08285~mv2.jpg"
             alt="Community service project"
             width={160}
             className="w-full h-full object-cover"
@@ -65,7 +65,7 @@ export default function HomePage() {
 
         <div className="absolute top-20 right-12 w-36 h-44 rounded-lg overflow-hidden">
           <Image 
-            src="https://static.wixstatic.com/media/eafe55_3a566c93369f4497802b0ec874a1e0cc~mv2.png?originWidth=128&originHeight=192"
+            src="https://static.wixstatic.com/media/eafe55_c68cf69a85424daab3d2714eff1e518a~mv2.jpg"
             alt="Networking event"
             width={144}
             className="w-full h-full object-cover"
@@ -74,7 +74,7 @@ export default function HomePage() {
 
         <div className="absolute bottom-16 right-8 w-44 h-36 rounded-lg overflow-hidden">
           <Image 
-            src="https://static.wixstatic.com/media/eafe55_078486be3e3f4daea704ff472fefd675~mv2.png?originWidth=128&originHeight=192"
+            src="https://static.wixstatic.com/media/eafe55_4aa2c82f41984951bccebd97e31e0220~mv2.jpg"
             alt="Youth development program"
             width={176}
             className="w-full h-full object-cover"
