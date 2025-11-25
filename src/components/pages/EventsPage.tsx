@@ -83,8 +83,13 @@ export default function EventsPage() {
       {/* Navigation */}
       <nav className="w-full px-6 py-4 flex justify-between items-center bg-primary">
         <div className="flex items-center space-x-8">
-          <Link to="/" className="text-primary-foreground font-heading text-xl font-semibold">
-            JCI Ikeja
+          <Link to="/" className="flex items-center">
+            <Image 
+              src="https://static.wixstatic.com/media/eafe55_7d49dbb22ce84b0faaabb2d7bccc253a~mv2.jpg"
+              alt="JCI Ikeja Logo"
+              width={120}
+              className="h-12 w-auto"
+            />
           </Link>
           <div className="hidden md:flex space-x-6">
             <Link to="/about" className="text-primary-foreground/80 hover:text-primary-foreground font-paragraph text-sm transition-colors">
