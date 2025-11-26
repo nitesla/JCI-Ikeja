@@ -88,11 +88,11 @@ const heroImageLoop = (delay: number) => ({
     duration: 4,
     delay,
     repeat: Infinity,
-    repeatType: 'loop' as const,
+    repeatType: 'loop' as 'loop',
     times: [0, 0.15, 0.85, 1],
-    ease: 'easeInOut' as const
+    ease: 'easeInOut' as 'easeInOut'
   }
-} as const);
+});
 
 export default function HomePage() {
   const [isPresidentDialogOpen, setIsPresidentDialogOpen] = useState(false);
@@ -608,6 +608,115 @@ export default function HomePage() {
 
       {/* Quick Access Section - Explore Our Chapter */}
       <motion.section 
+        className="bg-background py-20"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, margin: '-100px' }}
+      >
+        <div className="max-w-[100rem] mx-auto px-6">
+          <motion.h2 
+            className="font-heading text-4xl text-center text-foreground mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: '-100px' }}
+          >
+            Explore Our Chapter
+          </motion.h2>
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, margin: '-100px' }}
+          >
+            <motion.div variants={staggerItem}>
+              <Link to="/board" className="group">
+                <motion.div 
+                  className="bg-secondary p-8 rounded-lg hover:bg-softaccent transition-colors"
+                  whileHover={{ y: -8 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
+                    <Users className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
+                  </motion.div>
+                  <h3 className="font-heading text-xl text-secondary-foreground mb-2">Board of Directors</h3>
+                  <p className="font-paragraph text-secondary-foreground/80">
+                    Meet our dedicated leadership team and their professional backgrounds.
+                  </p>
+                </motion.div>
+              </Link>
+            </motion.div>
+            <motion.div variants={staggerItem}>
+              <Link to="/events" className="group">
+                <motion.div 
+                  className="bg-secondary p-8 rounded-lg hover:bg-softaccent transition-colors"
+                  whileHover={{ y: -8 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
+                    <Calendar className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
+                  </motion.div>
+                  <h3 className="font-heading text-xl text-secondary-foreground mb-2">Events & Projects</h3>
+                  <p className="font-paragraph text-secondary-foreground/80">
+                    Discover our upcoming events and ongoing community projects.
+                  </p>
+                </motion.div>
+              </Link>
+            </motion.div>
+            <motion.div variants={staggerItem}>
+              <Link to="/gallery" className="group">
+                <motion.div 
+                  className="bg-secondary p-8 rounded-lg hover:bg-softaccent transition-colors"
+                  whileHover={{ y: -8 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
+                    <Camera className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
+                  </motion.div>
+                  <h3 className="font-heading text-xl text-secondary-foreground mb-2">Gallery</h3>
+                  <p className="font-paragraph text-secondary-foreground/80">
+                    View highlights from our events and community service activities.
+                  </p>
+                </motion.div>
+              </Link>
+            </motion.div>
+            <motion.div variants={staggerItem}>
+              <Link to="/newsletter" className="group">
+                <motion.div 
+                  className="bg-secondary p-8 rounded-lg hover:bg-softaccent transition-colors"
+                  whileHover={{ y: -8 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
+                    <BookOpen className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
+                  </motion.div>
+                  <h3 className="font-heading text-xl text-secondary-foreground mb-2">Newsletter</h3>
+                  <p className="font-paragraph text-secondary-foreground/80">
+                    Stay updated with our latest news and chapter activities.
+                  </p>
+                </motion.div>
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Our Partners Section */}
+      <motion.section 
         className="bg-secondary py-20"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -761,115 +870,6 @@ export default function HomePage() {
                   />
                 </div>
               ))}
-            </motion.div>
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* Quick Access Section */}
-      <motion.section 
-        className="bg-background py-20"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true, margin: '-100px' }}
-      >
-        <div className="max-w-[100rem] mx-auto px-6">
-          <motion.h2 
-            className="font-heading text-4xl text-center text-foreground mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, margin: '-100px' }}
-          >
-            Explore Our Chapter
-          </motion.h2>
-          <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true, margin: '-100px' }}
-          >
-            <motion.div variants={staggerItem}>
-              <Link to="/board" className="group">
-                <motion.div 
-                  className="bg-secondary p-8 rounded-lg hover:bg-softaccent transition-colors"
-                  whileHover={{ y: -8 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
-                  >
-                    <Users className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
-                  </motion.div>
-                  <h3 className="font-heading text-xl text-secondary-foreground mb-2">Board of Directors</h3>
-                  <p className="font-paragraph text-secondary-foreground/80">
-                    Meet our dedicated leadership team and their professional backgrounds.
-                  </p>
-                </motion.div>
-              </Link>
-            </motion.div>
-            <motion.div variants={staggerItem}>
-              <Link to="/events" className="group">
-                <motion.div 
-                  className="bg-secondary p-8 rounded-lg hover:bg-softaccent transition-colors"
-                  whileHover={{ y: -8 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
-                  >
-                    <Calendar className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
-                  </motion.div>
-                  <h3 className="font-heading text-xl text-secondary-foreground mb-2">Events & Projects</h3>
-                  <p className="font-paragraph text-secondary-foreground/80">
-                    Discover our upcoming events and ongoing community projects.
-                  </p>
-                </motion.div>
-              </Link>
-            </motion.div>
-            <motion.div variants={staggerItem}>
-              <Link to="/gallery" className="group">
-                <motion.div 
-                  className="bg-secondary p-8 rounded-lg hover:bg-softaccent transition-colors"
-                  whileHover={{ y: -8 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
-                  >
-                    <Camera className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
-                  </motion.div>
-                  <h3 className="font-heading text-xl text-secondary-foreground mb-2">Gallery</h3>
-                  <p className="font-paragraph text-secondary-foreground/80">
-                    View highlights from our events and community service activities.
-                  </p>
-                </motion.div>
-              </Link>
-            </motion.div>
-            <motion.div variants={staggerItem}>
-              <Link to="/newsletter" className="group">
-                <motion.div 
-                  className="bg-secondary p-8 rounded-lg hover:bg-softaccent transition-colors"
-                  whileHover={{ y: -8 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
-                  >
-                    <BookOpen className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
-                  </motion.div>
-                  <h3 className="font-heading text-xl text-secondary-foreground mb-2">Newsletter</h3>
-                  <p className="font-paragraph text-secondary-foreground/80">
-                    Stay updated with our latest news and chapter activities.
-                  </p>
-                </motion.div>
-              </Link>
             </motion.div>
           </motion.div>
         </div>
