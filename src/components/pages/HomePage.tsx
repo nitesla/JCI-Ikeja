@@ -556,6 +556,68 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Our Partners Section */}
+      <section className="bg-secondary py-20">
+        <div className="max-w-[100rem] mx-auto px-6">
+          <motion.div 
+            className="text-center mb-16"
+            {...fadeInDown}
+          >
+            <motion.h2 
+              className="font-heading text-4xl md:text-5xl text-secondary-foreground mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: '-100px' }}
+            >
+              Our Partners
+            </motion.h2>
+            <motion.div 
+              className="w-16 h-1 bg-primary mx-auto mb-6"
+              initial={{ width: 0 }}
+              whileInView={{ width: 64 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true, margin: '-100px' }}
+            ></motion.div>
+            <motion.p 
+              className="font-paragraph text-lg text-secondary-foreground/90 max-w-2xl mx-auto leading-relaxed"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true, margin: '-100px' }}
+            >
+              We are proud to collaborate with leading organizations and institutions that share our commitment to developing young leaders and creating positive community impact.
+            </motion.p>
+          </motion.div>
+
+          {/* Partner Logos Grid */}
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, margin: '-100px' }}
+          >
+            {[1, 2, 3, 4].map((index) => (
+              <motion.div 
+                key={index}
+                className="bg-background p-8 rounded-lg flex items-center justify-center min-h-[200px] border border-bordersubtle hover:border-primary transition-colors"
+                variants={staggerItem}
+                whileHover={{ y: -4 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <div className="text-center">
+                  <div className="w-24 h-24 bg-softaccent rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <span className="text-secondary-foreground/40 font-heading text-sm">Partner Logo</span>
+                  </div>
+                  <p className="font-paragraph text-secondary-foreground/70 text-sm">Partner Name {index}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* Quick Access Section */}
       <section className="bg-background py-20">
         <div className="max-w-[100rem] mx-auto px-6">
