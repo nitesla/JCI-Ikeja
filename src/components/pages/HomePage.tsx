@@ -77,19 +77,21 @@ const sectionSlideInRight = {
   viewport: { once: true, margin: '-80px' }
 } as const;
 
-// Hero image pop animations
-const imagePop = {
+// Hero image pop animations with continuous loop
+const heroImageLoop = (delay: number) => ({
   initial: { opacity: 0, scale: 0 },
-  animate: { opacity: 1, scale: 1 },
-  exit: { opacity: 0, scale: 0 },
-  transition: { duration: 0.6, ease: 'easeOut', type: 'spring', stiffness: 100, damping: 15 }
-} as const;
-
-const imagePopDelayed = (delay: number) => ({
-  initial: { opacity: 0, scale: 0 },
-  animate: { opacity: 1, scale: 1 },
-  exit: { opacity: 0, scale: 0 },
-  transition: { duration: 0.6, ease: 'easeOut', delay, type: 'spring', stiffness: 100, damping: 15 }
+  animate: { 
+    opacity: [0, 1, 1, 0],
+    scale: [0, 1, 1, 0]
+  },
+  transition: { 
+    duration: 4,
+    delay,
+    repeat: Infinity,
+    repeatType: 'loop' as const,
+    times: [0, 0.15, 0.85, 1],
+    ease: 'easeInOut' as const
+  }
 } as const);
 
 export default function HomePage() {
@@ -165,12 +167,10 @@ export default function HomePage() {
 
       {/* Hero Section - Full Bleed with Asymmetrical Layout */}
       <section className="relative w-full max-w-[120rem] mx-auto px-6 py-20 min-h-[80vh] flex items-center overflow-hidden">
-        {/* Background Images - Asymmetrically Placed with Pop Animation */}
+        {/* Background Images - Asymmetrically Placed with Looping Pop Animation */}
         <motion.div 
           className="absolute top-16 left-8 w-32 h-40 rounded-lg overflow-hidden"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2, type: 'spring', stiffness: 100, damping: 15 }}
+          {...heroImageLoop(0)}
         >
           <Image 
             src="https://static.wixstatic.com/media/eafe55_ca25050ab12f4b138cb7be45f0dc0eab~mv2.jpg"
@@ -182,9 +182,7 @@ export default function HomePage() {
 
         <motion.div 
           className="absolute bottom-20 left-16 w-40 h-48 rounded-lg overflow-hidden"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.3, type: 'spring', stiffness: 100, damping: 15 }}
+          {...heroImageLoop(1)}
         >
           <Image 
             src="https://static.wixstatic.com/media/eafe55_02e52875f7d547358cc367dd2aa08285~mv2.jpg"
@@ -196,9 +194,7 @@ export default function HomePage() {
 
         <motion.div 
           className="absolute top-20 right-12 w-36 h-44 rounded-lg overflow-hidden"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.4, type: 'spring', stiffness: 100, damping: 15 }}
+          {...heroImageLoop(2)}
         >
           <Image 
             src="https://static.wixstatic.com/media/eafe55_c68cf69a85424daab3d2714eff1e518a~mv2.jpg"
@@ -210,9 +206,7 @@ export default function HomePage() {
 
         <motion.div 
           className="absolute bottom-16 right-8 w-44 h-36 rounded-lg overflow-hidden"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.5, type: 'spring', stiffness: 100, damping: 15 }}
+          {...heroImageLoop(3)}
         >
           <Image 
             src="https://static.wixstatic.com/media/eafe55_4aa2c82f41984951bccebd97e31e0220~mv2.jpg"
@@ -612,7 +606,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* Our Partners Section */}
+      {/* Quick Access Section - Explore Our Chapter */}
       <motion.section 
         className="bg-secondary py-20"
         initial={{ opacity: 0 }}
