@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Users, Calendar, BookOpen, Camera, Award, Users2, CheckCircle2, Heart } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { ArrowRight, Users, Calendar, BookOpen, Camera, Award, Users2, CheckCircle2, Heart, X } from 'lucide-react';
 
 export default function HomePage() {
+  const [isPresidentDialogOpen, setIsPresidentDialogOpen] = useState(false);
   return (
     <div className="min-h-screen bg-primary">
       {/* Navigation */}
@@ -139,7 +142,7 @@ export default function HomePage() {
                 or connect with like-minded professionals, JCI Ikeja offers the perfect platform. We invite you to 
                 join us on this exciting journey of growth, service, and excellence.
               </p>
-              <div>
+              <div className="mb-8">
                 <p className="font-heading text-xl text-secondary-foreground mb-1">
                   Chapter President Name
                 </p>
@@ -147,6 +150,13 @@ export default function HomePage() {
                   President, JCI Ikeja Chapter
                 </p>
               </div>
+              <Button 
+                onClick={() => setIsPresidentDialogOpen(true)}
+                className="bg-primary text-primary-foreground hover:bg-primary/90 w-fit"
+              >
+                Read More
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
             </div>
           </div>
         </div>
@@ -300,6 +310,61 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* President Message Dialog */}
+      <Dialog open={isPresidentDialogOpen} onOpenChange={setIsPresidentDialogOpen}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="font-heading text-3xl text-foreground">
+              Message From Our Chapter President
+            </DialogTitle>
+          </DialogHeader>
+          <div className="space-y-6">
+            {/* President Photo */}
+            <div className="w-full h-80 rounded-lg overflow-hidden">
+              <Image 
+                src="https://static.wixstatic.com/media/eafe55_ca25050ab12f4b138cb7be45f0dc0eab~mv2.jpg"
+                alt="Chapter President"
+                width={500}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Full Message */}
+            <div className="space-y-4">
+              <p className="font-paragraph text-lg text-foreground/90 leading-relaxed">
+                Welcome to JCI Ikeja, where we believe in the power of young leaders to transform communities. 
+                Our chapter is dedicated to fostering excellence, encouraging innovation, and building meaningful 
+                connections among our members.
+              </p>
+              <p className="font-paragraph text-lg text-foreground/90 leading-relaxed">
+                Whether you're looking to develop your leadership skills, make a positive impact in your community, 
+                or connect with like-minded professionals, JCI Ikeja offers the perfect platform. We invite you to 
+                join us on this exciting journey of growth, service, and excellence.
+              </p>
+              <p className="font-paragraph text-lg text-foreground/90 leading-relaxed">
+                As your chapter president, I am committed to ensuring that every member has the opportunity to grow, 
+                contribute, and make a meaningful difference. Together, we are building a legacy of leadership and 
+                service that will inspire generations to come.
+              </p>
+              <p className="font-paragraph text-lg text-foreground/90 leading-relaxed">
+                I look forward to working with you and seeing the incredible impact we can create together. Let's 
+                make JCI Ikeja a beacon of hope and positive change in our community.
+              </p>
+            </div>
+
+            {/* President Info */}
+            <div className="border-t border-border pt-4">
+              <p className="font-heading text-xl text-foreground mb-1">
+                Chapter President Name
+              </p>
+              <p className="font-paragraph text-foreground/70">
+                President, JCI Ikeja Chapter
+              </p>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* Footer */}
       <footer className="bg-primary py-12">
