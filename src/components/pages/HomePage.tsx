@@ -590,28 +590,62 @@ export default function HomePage() {
             </motion.p>
           </motion.div>
 
-          {/* Partner Logos Grid */}
+          {/* Partner Logos Grid - Grayscale with Color Hover */}
           <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="flex flex-wrap items-center justify-center gap-12 md:gap-16 lg:gap-20"
             variants={staggerContainer}
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true, margin: '-100px' }}
           >
-            {[1, 2, 3, 4].map((index) => (
+            {[
+              {
+                name: 'LSETF',
+                colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-lsetf-color',
+                grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-lsetf-gray'
+              },
+              {
+                name: 'Knewrow',
+                colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-knewrow-color',
+                grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-knewrow-gray'
+              },
+              {
+                name: 'Seal',
+                colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-seal-color',
+                grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-seal-gray'
+              },
+              {
+                name: 'Live Your Dreams Africa',
+                colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-lyda-color',
+                grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-lyda-gray'
+              },
+              {
+                name: 'Utiva',
+                colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-utiva-color',
+                grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-utiva-gray'
+              }
+            ].map((partner) => (
               <motion.div 
-                key={index}
-                className="bg-background p-8 rounded-lg flex items-center justify-center min-h-[200px] border border-bordersubtle hover:border-primary transition-colors"
+                key={partner.name}
+                className="relative h-24 flex items-center justify-center cursor-pointer group"
                 variants={staggerItem}
-                whileHover={{ y: -4 }}
+                whileHover={{ scale: 1.08 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
-                <div className="text-center">
-                  <div className="w-24 h-24 bg-softaccent rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <span className="text-secondary-foreground/40 font-heading text-sm">Partner Logo</span>
-                  </div>
-                  <p className="font-paragraph text-secondary-foreground/70 text-sm">Partner Name {index}</p>
-                </div>
+                {/* Grayscale version (default) */}
+                <Image 
+                  src={partner.grayscaleLogo}
+                  alt={`${partner.name} logo`}
+                  width={140}
+                  className="h-24 w-auto object-contain transition-opacity duration-300 group-hover:opacity-0 filter grayscale"
+                />
+                {/* Color version (on hover) */}
+                <Image 
+                  src={partner.colorLogo}
+                  alt={`${partner.name} logo in color`}
+                  width={140}
+                  className="h-24 w-auto object-contain absolute opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                />
               </motion.div>
             ))}
           </motion.div>
