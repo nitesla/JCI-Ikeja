@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
@@ -57,6 +57,23 @@ const staggerItem = {
 
 export default function HomePage() {
   const [isPresidentDialogOpen, setIsPresidentDialogOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Carousel images for the statistics section
+  const carouselImages = [
+    'https://static.wixstatic.com/media/eafe55_ca25050ab12f4b138cb7be45f0dc0eab~mv2.jpg',
+    'https://static.wixstatic.com/media/eafe55_02e52875f7d547358cc367dd2aa08285~mv2.jpg',
+    'https://static.wixstatic.com/media/eafe55_c68cf69a85424daab3d2714eff1e518a~mv2.jpg',
+    'https://static.wixstatic.com/media/eafe55_4aa2c82f41984951bccebd97e31e0220~mv2.jpg'
+  ];
+
+  // Auto-rotate carousel every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [carouselImages.length]);
   return (
     <div className="min-h-screen bg-primary">
       {/* Navigation */}
@@ -296,16 +313,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Statistics Section with Background Image */}
+      {/* Statistics Section with Sliding Carousel Background */}
       <section className="relative w-full py-24 overflow-hidden">
-        {/* Background Image */}
+        {/* Carousel Background */}
         <div className="absolute inset-0 z-0">
-          <Image 
-            src="https://static.wixstatic.com/media/eafe55_ca25050ab12f4b138cb7be45f0dc0eab~mv2.jpg"
-            alt="Statistics background"
-            width={1600}
-            className="w-full h-full object-cover"
-          />
+          {/* Carousel Images */}
+          <div className="relative w-full h-full">
+            {carouselImages.map((image, index) => (
+              <motion.div
+                key={index}
+                className="absolute inset-0"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: currentImageIndex === index ? 1 : 0 }}
+                transition={{ duration: 1, ease: 'easeInOut' }}
+              >
+                <Image 
+                  src={image}
+                  alt={`Statistics background ${index + 1}`}
+                  width={1600}
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            ))}
+          </div>
+          {/* Overlay */}
           <div className="absolute inset-0 bg-primary/85"></div>
         </div>
 
@@ -397,6 +428,29 @@ export default function HomePage() {
               <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">10000+</p>
               <p className="font-paragraph text-primary-foreground/80">Lives Impacted</p>
             </motion.div>
+          </motion.div>
+
+          {/* Carousel Indicators */}
+          <motion.div 
+            className="flex justify-center gap-2 mt-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ once: true, margin: '-100px' }}
+          >
+            {carouselImages.map((_, index) => (
+              <motion.button
+                key={index}
+                onClick={() => setCurrentImageIndex(index)}
+                className={`h-2 rounded-full transition-all ${
+                  currentImageIndex === index 
+                    ? 'bg-cyan-400 w-8' 
+                    : 'bg-primary-foreground/40 w-2 hover:bg-primary-foreground/60'
+                }`}
+                whileHover={{ scale: 1.2 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              />
+            ))}
           </motion.div>
         </div>
       </section>
