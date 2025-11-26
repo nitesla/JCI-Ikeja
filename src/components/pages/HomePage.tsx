@@ -4,6 +4,56 @@ import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { ArrowRight, Users, Calendar, BookOpen, Camera, Award, Users2, CheckCircle2, Heart, X } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+// Animation variants
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: 'easeOut' },
+  viewport: { once: true, margin: '-100px' }
+} as const;
+
+const fadeInDown = {
+  initial: { opacity: 0, y: -30 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: 'easeOut' },
+  viewport: { once: true, margin: '-100px' }
+} as const;
+
+const slideInLeft = {
+  initial: { opacity: 0, x: -50 },
+  whileInView: { opacity: 1, x: 0 },
+  transition: { duration: 0.7, ease: 'easeOut' },
+  viewport: { once: true, margin: '-100px' }
+} as const;
+
+const slideInRight = {
+  initial: { opacity: 0, x: 50 },
+  whileInView: { opacity: 1, x: 0 },
+  transition: { duration: 0.7, ease: 'easeOut' },
+  viewport: { once: true, margin: '-100px' }
+} as const;
+
+const scaleIn = {
+  initial: { opacity: 0, scale: 0.95 },
+  whileInView: { opacity: 1, scale: 1 },
+  transition: { duration: 0.6, ease: 'easeOut' },
+  viewport: { once: true, margin: '-100px' }
+} as const;
+
+const staggerContainer = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+  transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+  viewport: { once: true, margin: '-100px' }
+} as const;
+
+const staggerItem = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 }
+} as const;
 
 export default function HomePage() {
   const [isPresidentDialogOpen, setIsPresidentDialogOpen] = useState(false);
@@ -46,55 +96,102 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section - Full Bleed with Asymmetrical Layout */}
-      <section className="relative w-full max-w-[120rem] mx-auto px-6 py-20 min-h-[80vh] flex items-center">
-        {/* Background Images - Asymmetrically Placed */}
-        <div className="absolute top-16 left-8 w-32 h-40 rounded-lg overflow-hidden">
+      <section className="relative w-full max-w-[120rem] mx-auto px-6 py-20 min-h-[80vh] flex items-center overflow-hidden">
+        {/* Background Images - Asymmetrically Placed with Parallax */}
+        <motion.div 
+          className="absolute top-16 left-8 w-32 h-40 rounded-lg overflow-hidden"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <Image 
             src="https://static.wixstatic.com/media/eafe55_ca25050ab12f4b138cb7be45f0dc0eab~mv2.jpg"
             alt="Leadership meeting"
             width={128}
             className="w-full h-full object-cover"
           />
-        </div>
+        </motion.div>
 
-        <div className="absolute bottom-20 left-16 w-40 h-48 rounded-lg overflow-hidden">
+        <motion.div 
+          className="absolute bottom-20 left-16 w-40 h-48 rounded-lg overflow-hidden"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
           <Image 
             src="https://static.wixstatic.com/media/eafe55_02e52875f7d547358cc367dd2aa08285~mv2.jpg"
             alt="Community service project"
             width={160}
             className="w-full h-full object-cover"
           />
-        </div>
+        </motion.div>
 
-        <div className="absolute top-20 right-12 w-36 h-44 rounded-lg overflow-hidden">
+        <motion.div 
+          className="absolute top-20 right-12 w-36 h-44 rounded-lg overflow-hidden"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
           <Image 
             src="https://static.wixstatic.com/media/eafe55_c68cf69a85424daab3d2714eff1e518a~mv2.jpg"
             alt="Networking event"
             width={144}
             className="w-full h-full object-cover"
           />
-        </div>
+        </motion.div>
 
-        <div className="absolute bottom-16 right-8 w-44 h-36 rounded-lg overflow-hidden">
+        <motion.div 
+          className="absolute bottom-16 right-8 w-44 h-36 rounded-lg overflow-hidden"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
           <Image 
             src="https://static.wixstatic.com/media/eafe55_4aa2c82f41984951bccebd97e31e0220~mv2.jpg"
             alt="Youth development program"
             width={176}
             className="w-full h-full object-cover"
           />
-        </div>
+        </motion.div>
 
         {/* Central Content */}
-        <div className="relative z-10 text-center max-w-4xl mx-auto">
-          <h1 className="font-heading text-6xl md:text-7xl text-primary-foreground mb-6 leading-tight">
+        <motion.div 
+          className="relative z-10 text-center max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.h1 
+            className="font-heading text-6xl md:text-7xl text-primary-foreground mb-6 leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
             Leadership Excellence
-            <span className="block italic text-5xl md:text-6xl mt-2">in JCI Ikeja</span>
-          </h1>
-          <p className="font-paragraph text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+            <motion.span 
+              className="block italic text-5xl md:text-6xl mt-2"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              in JCI Ikeja
+            </motion.span>
+          </motion.h1>
+          <motion.p 
+            className="font-paragraph text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
             Empowering young leaders to create positive change through community service, 
             professional development, and international collaboration.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          </motion.p>
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             <Link to="/about">
               <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90 px-8 py-3">
                 Discover Our Mission
@@ -106,8 +203,8 @@ export default function HomePage() {
                 Become a Member
               </Button>
             </Link>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Message From Chapter President Section */}
@@ -115,7 +212,10 @@ export default function HomePage() {
         <div className="max-w-[100rem] mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* President Photo */}
-            <div className="flex justify-center md:justify-start">
+            <motion.div 
+              className="flex justify-center md:justify-start"
+              {...slideInLeft}
+            >
               <div className="w-80 h-96 rounded-lg overflow-hidden">
                 <Image 
                   src="https://static.wixstatic.com/media/eafe55_ca25050ab12f4b138cb7be45f0dc0eab~mv2.jpg"
@@ -124,40 +224,74 @@ export default function HomePage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-            </div>
+            </motion.div>
 
             {/* President Message */}
-            <div className="flex flex-col justify-center">
-              <h2 className="font-heading text-4xl md:text-5xl text-secondary-foreground mb-4">
+            <motion.div 
+              className="flex flex-col justify-center"
+              {...slideInRight}
+            >
+              <motion.h2 
+                className="font-heading text-4xl md:text-5xl text-secondary-foreground mb-4"
+                {...fadeInUp}
+              >
                 Message From Our Chapter President
-              </h2>
-              <div className="w-16 h-1 bg-primary mb-6"></div>
-              <p className="font-paragraph text-lg text-secondary-foreground/90 leading-relaxed mb-6">
+              </motion.h2>
+              <motion.div 
+                className="w-16 h-1 bg-primary mb-6"
+                initial={{ width: 0 }}
+                whileInView={{ width: 64 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true, margin: '-100px' }}
+              ></motion.div>
+              <motion.p 
+                className="font-paragraph text-lg text-secondary-foreground/90 leading-relaxed mb-6"
+                {...fadeInUp}
+              >
                 Welcome to JCI Ikeja, where we believe in the power of young leaders to transform communities. 
                 Our chapter is dedicated to fostering excellence, encouraging innovation, and building meaningful 
                 connections among our members.
-              </p>
-              <p className="font-paragraph text-lg text-secondary-foreground/90 leading-relaxed mb-8">
+              </motion.p>
+              <motion.p 
+                className="font-paragraph text-lg text-secondary-foreground/90 leading-relaxed mb-8"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true, margin: '-100px' }}
+              >
                 Whether you're looking to develop your leadership skills, make a positive impact in your community, 
                 or connect with like-minded professionals, JCI Ikeja offers the perfect platform. We invite you to 
                 join us on this exciting journey of growth, service, and excellence.
-              </p>
-              <div className="mb-8">
+              </motion.p>
+              <motion.div 
+                className="mb-8"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true, margin: '-100px' }}
+              >
                 <p className="font-heading text-xl text-secondary-foreground mb-1">
                   Chapter President Name
                 </p>
                 <p className="font-paragraph text-secondary-foreground/70">
                   President, JCI Ikeja Chapter
                 </p>
-              </div>
-              <Button 
-                onClick={() => setIsPresidentDialogOpen(true)}
-                className="bg-primary text-primary-foreground hover:bg-primary/90 w-fit"
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true, margin: '-100px' }}
               >
-                Read More
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
+                <Button 
+                  onClick={() => setIsPresidentDialogOpen(true)}
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 w-fit"
+                >
+                  Read More
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -177,137 +311,284 @@ export default function HomePage() {
 
         {/* Content */}
         <div className="relative z-10 max-w-[100rem] mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl md:text-5xl text-primary-foreground mb-4">
+          <motion.div 
+            className="text-center mb-16"
+            {...fadeInDown}
+          >
+            <motion.h2 
+              className="font-heading text-4xl md:text-5xl text-primary-foreground mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: '-100px' }}
+            >
               Transforming Communities Through Leadership
-            </h2>
-            <p className="font-paragraph text-lg text-primary-foreground/80">
+            </motion.h2>
+            <motion.p 
+              className="font-paragraph text-lg text-primary-foreground/80"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true, margin: '-100px' }}
+            >
               Over 65 years of excellence in developing young leaders and creating lasting impact.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-primary-foreground/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            </motion.p>
+          </motion.div>
+          <motion.div 
+            className="grid md:grid-cols-4 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, margin: '-100px' }}
+          >
+            <motion.div 
+              className="text-center"
+              variants={staggerItem}
+            >
+              <motion.div 
+                className="w-20 h-20 bg-primary-foreground/10 rounded-full flex items-center justify-center mx-auto mb-6"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
                 <Award className="h-10 w-10 text-cyan-400" />
-              </div>
+              </motion.div>
               <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">65+</p>
               <p className="font-paragraph text-primary-foreground/80">Years of Excellence</p>
-            </div>
-            <div className="text-center">
-              <div className="w-20 h-20 bg-primary-foreground/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            </motion.div>
+            <motion.div 
+              className="text-center"
+              variants={staggerItem}
+            >
+              <motion.div 
+                className="w-20 h-20 bg-primary-foreground/10 rounded-full flex items-center justify-center mx-auto mb-6"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
                 <Users2 className="h-10 w-10 text-cyan-400" />
-              </div>
+              </motion.div>
               <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">5000+</p>
               <p className="font-paragraph text-primary-foreground/80">Membership</p>
-            </div>
-            <div className="text-center">
-              <div className="w-20 h-20 bg-primary-foreground/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            </motion.div>
+            <motion.div 
+              className="text-center"
+              variants={staggerItem}
+            >
+              <motion.div 
+                className="w-20 h-20 bg-primary-foreground/10 rounded-full flex items-center justify-center mx-auto mb-6"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
                 <CheckCircle2 className="h-10 w-10 text-cyan-400" />
-              </div>
+              </motion.div>
               <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">120+</p>
               <p className="font-paragraph text-primary-foreground/80">Projects Completed</p>
-            </div>
-            <div className="text-center">
-              <div className="w-20 h-20 bg-primary-foreground/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            </motion.div>
+            <motion.div 
+              className="text-center"
+              variants={staggerItem}
+            >
+              <motion.div 
+                className="w-20 h-20 bg-primary-foreground/10 rounded-full flex items-center justify-center mx-auto mb-6"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
                 <Heart className="h-10 w-10 text-cyan-400" />
-              </div>
+              </motion.div>
               <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">10000+</p>
               <p className="font-paragraph text-primary-foreground/80">Lives Impacted</p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Mission Statement Section */}
       <section className="bg-secondary py-20">
         <div className="max-w-[100rem] mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl md:text-5xl text-secondary-foreground mb-6">
+          <motion.div 
+            className="text-center mb-16"
+            {...fadeInDown}
+          >
+            <motion.h2 
+              className="font-heading text-4xl md:text-5xl text-secondary-foreground mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: '-100px' }}
+            >
               Our Mission
-            </h2>
+            </motion.h2>
             <div className="max-w-4xl mx-auto">
-              <p className="font-paragraph text-xl text-secondary-foreground/90 leading-relaxed mb-8">
+              <motion.p 
+                className="font-paragraph text-xl text-secondary-foreground/90 leading-relaxed mb-8"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true, margin: '-100px' }}
+              >
                 To provide development opportunities that empower young people to create positive change 
                 in their communities through leadership training, community service, and international cooperation.
-              </p>
-              <div className="grid md:grid-cols-3 gap-8 mt-12">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
+              </motion.p>
+              <motion.div 
+                className="grid md:grid-cols-3 gap-8 mt-12"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="whileInView"
+                viewport={{ once: true, margin: '-100px' }}
+              >
+                <motion.div 
+                  className="text-center"
+                  variants={staggerItem}
+                >
+                  <motion.div 
+                    className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4"
+                    whileHover={{ scale: 1.15, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
                     <Users className="h-8 w-8 text-secondary-foreground" />
-                  </div>
+                  </motion.div>
                   <h3 className="font-heading text-xl text-secondary-foreground mb-2">Leadership</h3>
                   <p className="font-paragraph text-secondary-foreground/80">
                     Developing future leaders through training and mentorship programs.
                   </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
+                </motion.div>
+                <motion.div 
+                  className="text-center"
+                  variants={staggerItem}
+                >
+                  <motion.div 
+                    className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4"
+                    whileHover={{ scale: 1.15, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
                     <Calendar className="h-8 w-8 text-secondary-foreground" />
-                  </div>
+                  </motion.div>
                   <h3 className="font-heading text-xl text-secondary-foreground mb-2">Community</h3>
                   <p className="font-paragraph text-secondary-foreground/80">
                     Creating positive impact through meaningful community service projects.
                   </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
+                </motion.div>
+                <motion.div 
+                  className="text-center"
+                  variants={staggerItem}
+                >
+                  <motion.div 
+                    className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4"
+                    whileHover={{ scale: 1.15, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
                     <BookOpen className="h-8 w-8 text-secondary-foreground" />
-                  </div>
+                  </motion.div>
                   <h3 className="font-heading text-xl text-secondary-foreground mb-2">Growth</h3>
                   <p className="font-paragraph text-secondary-foreground/80">
                     Fostering personal and professional development opportunities.
                   </p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Quick Access Section */}
       <section className="bg-background py-20">
         <div className="max-w-[100rem] mx-auto px-6">
-          <h2 className="font-heading text-4xl text-center text-foreground mb-12">
+          <motion.h2 
+            className="font-heading text-4xl text-center text-foreground mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: '-100px' }}
+          >
             Explore Our Chapter
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Link to="/board" className="group">
-              <div className="bg-secondary p-8 rounded-lg hover:bg-softaccent transition-colors">
-                <Users className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
-                <h3 className="font-heading text-xl text-secondary-foreground mb-2">Board of Directors</h3>
-                <p className="font-paragraph text-secondary-foreground/80">
-                  Meet our dedicated leadership team and their professional backgrounds.
-                </p>
-              </div>
-            </Link>
-            <Link to="/events" className="group">
-              <div className="bg-secondary p-8 rounded-lg hover:bg-softaccent transition-colors">
-                <Calendar className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
-                <h3 className="font-heading text-xl text-secondary-foreground mb-2">Events & Projects</h3>
-                <p className="font-paragraph text-secondary-foreground/80">
-                  Discover our upcoming events and ongoing community projects.
-                </p>
-              </div>
-            </Link>
-            <Link to="/gallery" className="group">
-              <div className="bg-secondary p-8 rounded-lg hover:bg-softaccent transition-colors">
-                <Camera className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
-                <h3 className="font-heading text-xl text-secondary-foreground mb-2">Gallery</h3>
-                <p className="font-paragraph text-secondary-foreground/80">
-                  View highlights from our events and community service activities.
-                </p>
-              </div>
-            </Link>
-            <Link to="/newsletter" className="group">
-              <div className="bg-secondary p-8 rounded-lg hover:bg-softaccent transition-colors">
-                <BookOpen className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
-                <h3 className="font-heading text-xl text-secondary-foreground mb-2">Newsletter</h3>
-                <p className="font-paragraph text-secondary-foreground/80">
-                  Stay updated with our latest news and chapter activities.
-                </p>
-              </div>
-            </Link>
-          </div>
+          </motion.h2>
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, margin: '-100px' }}
+          >
+            <motion.div variants={staggerItem}>
+              <Link to="/board" className="group">
+                <motion.div 
+                  className="bg-secondary p-8 rounded-lg hover:bg-softaccent transition-colors"
+                  whileHover={{ y: -8 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
+                    <Users className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
+                  </motion.div>
+                  <h3 className="font-heading text-xl text-secondary-foreground mb-2">Board of Directors</h3>
+                  <p className="font-paragraph text-secondary-foreground/80">
+                    Meet our dedicated leadership team and their professional backgrounds.
+                  </p>
+                </motion.div>
+              </Link>
+            </motion.div>
+            <motion.div variants={staggerItem}>
+              <Link to="/events" className="group">
+                <motion.div 
+                  className="bg-secondary p-8 rounded-lg hover:bg-softaccent transition-colors"
+                  whileHover={{ y: -8 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
+                    <Calendar className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
+                  </motion.div>
+                  <h3 className="font-heading text-xl text-secondary-foreground mb-2">Events & Projects</h3>
+                  <p className="font-paragraph text-secondary-foreground/80">
+                    Discover our upcoming events and ongoing community projects.
+                  </p>
+                </motion.div>
+              </Link>
+            </motion.div>
+            <motion.div variants={staggerItem}>
+              <Link to="/gallery" className="group">
+                <motion.div 
+                  className="bg-secondary p-8 rounded-lg hover:bg-softaccent transition-colors"
+                  whileHover={{ y: -8 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
+                    <Camera className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
+                  </motion.div>
+                  <h3 className="font-heading text-xl text-secondary-foreground mb-2">Gallery</h3>
+                  <p className="font-paragraph text-secondary-foreground/80">
+                    View highlights from our events and community service activities.
+                  </p>
+                </motion.div>
+              </Link>
+            </motion.div>
+            <motion.div variants={staggerItem}>
+              <Link to="/newsletter" className="group">
+                <motion.div 
+                  className="bg-secondary p-8 rounded-lg hover:bg-softaccent transition-colors"
+                  whileHover={{ y: -8 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
+                    <BookOpen className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
+                  </motion.div>
+                  <h3 className="font-heading text-xl text-secondary-foreground mb-2">Newsletter</h3>
+                  <p className="font-paragraph text-secondary-foreground/80">
+                    Stay updated with our latest news and chapter activities.
+                  </p>
+                </motion.div>
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
