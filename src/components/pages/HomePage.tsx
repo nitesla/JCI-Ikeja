@@ -55,6 +55,28 @@ const staggerItem = {
   transition: { duration: 0.5 }
 } as const;
 
+// Section transition variants
+const sectionFadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.8, ease: 'easeOut' },
+  viewport: { once: true, margin: '-80px' }
+} as const;
+
+const sectionSlideInLeft = {
+  initial: { opacity: 0, x: -80 },
+  whileInView: { opacity: 1, x: 0 },
+  transition: { duration: 0.8, ease: 'easeOut' },
+  viewport: { once: true, margin: '-80px' }
+} as const;
+
+const sectionSlideInRight = {
+  initial: { opacity: 0, x: 80 },
+  whileInView: { opacity: 1, x: 0 },
+  transition: { duration: 0.8, ease: 'easeOut' },
+  viewport: { once: true, margin: '-80px' }
+} as const;
+
 export default function HomePage() {
   const [isPresidentDialogOpen, setIsPresidentDialogOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -74,6 +96,7 @@ export default function HomePage() {
     }, 5000);
     return () => clearInterval(interval);
   }, [carouselImages.length]);
+
   return (
     <div className="min-h-screen bg-primary">
       {/* Navigation */}
@@ -238,13 +261,19 @@ export default function HomePage() {
       </section>
 
       {/* Message From Chapter President Section */}
-      <section className="bg-secondary py-20">
+      <motion.section 
+        className="bg-secondary py-20"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, margin: '-100px' }}
+      >
         <div className="max-w-[100rem] mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* President Photo */}
             <motion.div 
               className="flex justify-center md:justify-start"
-              {...slideInLeft}
+              {...sectionSlideInLeft}
             >
               <div className="w-80 h-96 rounded-lg overflow-hidden">
                 <Image 
@@ -259,7 +288,7 @@ export default function HomePage() {
             {/* President Message */}
             <motion.div 
               className="flex flex-col justify-center"
-              {...slideInRight}
+              {...sectionSlideInRight}
             >
               <motion.h2 
                 className="font-heading text-4xl md:text-5xl text-secondary-foreground mb-4"
@@ -324,10 +353,16 @@ export default function HomePage() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Statistics Section with Sliding Carousel Background */}
-      <section className="relative w-full py-24 overflow-hidden">
+      <motion.section 
+        className="relative w-full py-24 overflow-hidden"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, margin: '-100px' }}
+      >
         {/* Carousel Background */}
         <div className="absolute inset-0 z-0">
           {/* Carousel Images */}
@@ -466,10 +501,16 @@ export default function HomePage() {
             ))}
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Mission Statement Section */}
-      <section className="bg-secondary py-20">
+      <motion.section 
+        className="bg-secondary py-20"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, margin: '-100px' }}
+      >
         <div className="max-w-[100rem] mx-auto px-6">
           <motion.div 
             className="text-center mb-16"
@@ -554,10 +595,16 @@ export default function HomePage() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Our Partners Section */}
-      <section className="bg-secondary py-20">
+      <motion.section 
+        className="bg-secondary py-20"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, margin: '-100px' }}
+      >
         <div className="max-w-[100rem] mx-auto px-6">
           <motion.div 
             className="text-center mb-16"
@@ -708,10 +755,16 @@ export default function HomePage() {
             </motion.div>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Quick Access Section */}
-      <section className="bg-background py-20">
+      <motion.section 
+        className="bg-background py-20"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, margin: '-100px' }}
+      >
         <div className="max-w-[100rem] mx-auto px-6">
           <motion.h2 
             className="font-heading text-4xl text-center text-foreground mb-12"
@@ -811,7 +864,7 @@ export default function HomePage() {
             </motion.div>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* President Message Dialog */}
       <Dialog open={isPresidentDialogOpen} onOpenChange={setIsPresidentDialogOpen}>
