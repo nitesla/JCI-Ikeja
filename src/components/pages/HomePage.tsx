@@ -590,64 +590,122 @@ export default function HomePage() {
             </motion.p>
           </motion.div>
 
-          {/* Partner Logos Grid - Grayscale with Color Hover */}
+          {/* Partner Logos Marquee - Horizontal Scrolling */}
           <motion.div 
-            className="flex flex-wrap items-center justify-center gap-12 md:gap-16 lg:gap-20"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="whileInView"
+            className="overflow-hidden"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true, margin: '-100px' }}
           >
-            {[
-              {
-                name: 'LSETF',
-                colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-lsetf-color',
-                grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-lsetf-gray'
-              },
-              {
-                name: 'Knewrow',
-                colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-knewrow-color',
-                grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-knewrow-gray'
-              },
-              {
-                name: 'Seal',
-                colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-seal-color',
-                grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-seal-gray'
-              },
-              {
-                name: 'Live Your Dreams Africa',
-                colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-lyda-color',
-                grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-lyda-gray'
-              },
-              {
-                name: 'Utiva',
-                colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-utiva-color',
-                grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-utiva-gray'
-              }
-            ].map((partner) => (
-              <motion.div 
-                key={partner.name}
-                className="relative h-24 flex items-center justify-center cursor-pointer group"
-                variants={staggerItem}
-                whileHover={{ scale: 1.08 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
-                {/* Grayscale version (default) */}
-                <Image 
-                  src={partner.grayscaleLogo}
-                  alt={`${partner.name} logo`}
-                  width={140}
-                  className="h-24 w-auto object-contain transition-opacity duration-300 group-hover:opacity-0 filter grayscale"
-                />
-                {/* Color version (on hover) */}
-                <Image 
-                  src={partner.colorLogo}
-                  alt={`${partner.name} logo in color`}
-                  width={140}
-                  className="h-24 w-auto object-contain absolute opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                />
-              </motion.div>
-            ))}
+            <motion.div 
+              className="flex items-center gap-16 md:gap-24 lg:gap-32"
+              animate={{ x: ['0%', '-100%'] }}
+              transition={{ 
+                duration: 40, 
+                repeat: Infinity, 
+                ease: 'linear',
+                repeatType: 'loop'
+              }}
+            >
+              {/* Original set of logos */}
+              {[
+                {
+                  name: 'LSETF',
+                  colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-lsetf-color',
+                  grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-lsetf-gray'
+                },
+                {
+                  name: 'Knewrow',
+                  colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-knewrow-color',
+                  grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-knewrow-gray'
+                },
+                {
+                  name: 'Seal',
+                  colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-seal-color',
+                  grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-seal-gray'
+                },
+                {
+                  name: 'Live Your Dreams Africa',
+                  colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-lyda-color',
+                  grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-lyda-gray'
+                },
+                {
+                  name: 'Utiva',
+                  colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-utiva-color',
+                  grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-utiva-gray'
+                }
+              ].map((partner) => (
+                <div 
+                  key={`${partner.name}-1`}
+                  className="relative h-24 flex-shrink-0 flex items-center justify-center cursor-pointer group"
+                >
+                  {/* Grayscale version (default) */}
+                  <Image 
+                    src={partner.grayscaleLogo}
+                    alt={`${partner.name} logo`}
+                    width={140}
+                    className="h-24 w-auto object-contain transition-opacity duration-300 group-hover:opacity-0 filter grayscale"
+                  />
+                  {/* Color version (on hover) */}
+                  <Image 
+                    src={partner.colorLogo}
+                    alt={`${partner.name} logo in color`}
+                    width={140}
+                    className="h-24 w-auto object-contain absolute opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  />
+                </div>
+              ))}
+              
+              {/* Duplicate set for seamless loop */}
+              {[
+                {
+                  name: 'LSETF',
+                  colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-lsetf-color',
+                  grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-lsetf-gray'
+                },
+                {
+                  name: 'Knewrow',
+                  colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-knewrow-color',
+                  grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-knewrow-gray'
+                },
+                {
+                  name: 'Seal',
+                  colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-seal-color',
+                  grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-seal-gray'
+                },
+                {
+                  name: 'Live Your Dreams Africa',
+                  colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-lyda-color',
+                  grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-lyda-gray'
+                },
+                {
+                  name: 'Utiva',
+                  colorLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-utiva-color',
+                  grayscaleLogo: 'https://static.wixstatic.com/media/eafe55_f4c56072981c412d9fab969e9cc05dee~mv2.png?id=partner-utiva-gray'
+                }
+              ].map((partner) => (
+                <div 
+                  key={`${partner.name}-2`}
+                  className="relative h-24 flex-shrink-0 flex items-center justify-center cursor-pointer group"
+                >
+                  {/* Grayscale version (default) */}
+                  <Image 
+                    src={partner.grayscaleLogo}
+                    alt={`${partner.name} logo`}
+                    width={140}
+                    className="h-24 w-auto object-contain transition-opacity duration-300 group-hover:opacity-0 filter grayscale"
+                  />
+                  {/* Color version (on hover) */}
+                  <Image 
+                    src={partner.colorLogo}
+                    alt={`${partner.name} logo in color`}
+                    width={140}
+                    className="h-24 w-auto object-contain absolute opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  />
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>
