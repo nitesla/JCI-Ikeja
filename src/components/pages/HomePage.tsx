@@ -339,10 +339,10 @@ export default function HomePage() {
                 viewport={{ once: true, margin: '-100px' }}
               >
                 <p className="font-heading text-xl text-secondary-foreground mb-1">
-                  Chapter President Name
+                  JCIN Amb. Olubunmi Grace Fadare
                 </p>
                 <p className="font-paragraph text-secondary-foreground/70">
-                  President, JCI Ikeja Chapter
+                  2026 President, JCI Ikeja
                 </p>
               </motion.div>
               <motion.div
@@ -920,10 +920,10 @@ export default function HomePage() {
             {/* President Info */}
             <div className="border-t border-border pt-4">
               <p className="font-heading text-xl text-foreground mb-1">
-                Chapter President Name
+                JCIN Amb. Olubunmi Grace Fadare
               </p>
               <p className="font-paragraph text-foreground/70">
-                President, JCI Ikeja Chapter
+                2026 President, JCI Ikeja
               </p>
             </div>
           </div>
