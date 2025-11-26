@@ -100,10 +100,10 @@ export default function HomePage() {
 
   // Carousel images for the statistics section
   const carouselImages = [
-    'https://static.wixstatic.com/media/eafe55_ca25050ab12f4b138cb7be45f0dc0eab~mv2.jpg',
-    'https://static.wixstatic.com/media/eafe55_02e52875f7d547358cc367dd2aa08285~mv2.jpg',
-    'https://static.wixstatic.com/media/eafe55_c68cf69a85424daab3d2714eff1e518a~mv2.jpg',
-    'https://static.wixstatic.com/media/eafe55_4aa2c82f41984951bccebd97e31e0220~mv2.jpg'
+    'https://static.wixstatic.com/media/eafe55_1ea632cb1c1944dbb32bd7c2ef642d97~mv2.jpg',
+    'https://static.wixstatic.com/media/eafe55_ae13cc8628df40f3bbdfd4b4e47ba83b~mv2.jpg',
+    'https://static.wixstatic.com/media/eafe55_d8cd599ff59448a5a2d254490dcc17df~mv2.jpg',
+    'https://static.wixstatic.com/media/eafe55_9fa5b465b71a408d96d4de6a993b75f5~mv2.jpg'
   ];
 
   // Auto-rotate carousel every 5 seconds
@@ -410,7 +410,7 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true, margin: '-100px' }}
             >
-              Transforming Communities Through Leadership
+              Transforming Communities Through Positive Impact
             </motion.h2>
             <motion.p 
               className="font-paragraph text-lg text-primary-foreground/80"
