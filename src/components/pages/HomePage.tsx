@@ -76,8 +76,8 @@ export default function HomePage() {
   }, [carouselImages.length]);
   return (
     <div className="min-h-screen bg-primary">
-      {/* Navigation - Fixed at Top */}
-      <nav className="fixed top-0 left-0 right-0 w-full px-6 py-4 flex justify-between items-center bg-primary/95 backdrop-blur-sm z-50 border-b border-primary-foreground/10">
+      {/* Navigation */}
+      <nav className="w-full px-6 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-8">
           <Link to="/" className="flex items-center">
             <Image 
@@ -105,15 +105,23 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <Link to="/join">
-          <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
-            Join Us
-          </Button>
-        </Link>
       </nav>
 
+      {/* Floating Join Us Button */}
+      <Link to="/join" className="fixed bottom-8 left-8 z-40">
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: 'spring', stiffness: 300 }}
+        >
+          <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90 rounded-full px-6 py-3 shadow-lg">
+            Join Us
+          </Button>
+        </motion.div>
+      </Link>
+
       {/* Hero Section - Full Bleed with Asymmetrical Layout */}
-      <section className="relative w-full max-w-[120rem] mx-auto px-6 py-20 min-h-[80vh] flex items-center overflow-hidden pt-32">
+      <section className="relative w-full max-w-[120rem] mx-auto px-6 py-20 min-h-[80vh] flex items-center overflow-hidden">
         {/* Background Images - Asymmetrically Placed with Parallax */}
         <motion.div 
           className="absolute top-16 left-8 w-32 h-40 rounded-lg overflow-hidden"
