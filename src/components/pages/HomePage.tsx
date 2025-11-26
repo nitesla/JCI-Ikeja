@@ -107,6 +107,51 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Message From Chapter President Section */}
+      <section className="bg-secondary py-20">
+        <div className="max-w-[100rem] mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* President Photo */}
+            <div className="flex justify-center md:justify-start">
+              <div className="w-80 h-96 rounded-lg overflow-hidden">
+                <Image 
+                  src="https://static.wixstatic.com/media/eafe55_ca25050ab12f4b138cb7be45f0dc0eab~mv2.jpg"
+                  alt="Chapter President"
+                  width={320}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* President Message */}
+            <div className="flex flex-col justify-center">
+              <h2 className="font-heading text-4xl md:text-5xl text-secondary-foreground mb-4">
+                Message From Our Chapter President
+              </h2>
+              <div className="w-16 h-1 bg-primary mb-6"></div>
+              <p className="font-paragraph text-lg text-secondary-foreground/90 leading-relaxed mb-6">
+                Welcome to JCI Ikeja, where we believe in the power of young leaders to transform communities. 
+                Our chapter is dedicated to fostering excellence, encouraging innovation, and building meaningful 
+                connections among our members.
+              </p>
+              <p className="font-paragraph text-lg text-secondary-foreground/90 leading-relaxed mb-8">
+                Whether you're looking to develop your leadership skills, make a positive impact in your community, 
+                or connect with like-minded professionals, JCI Ikeja offers the perfect platform. We invite you to 
+                join us on this exciting journey of growth, service, and excellence.
+              </p>
+              <div>
+                <p className="font-heading text-xl text-secondary-foreground mb-1">
+                  Chapter President Name
+                </p>
+                <p className="font-paragraph text-secondary-foreground/70">
+                  President, JCI Ikeja Chapter
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Statistics Section with Background Image */}
       <section className="relative w-full py-24 overflow-hidden">
         {/* Background Image */}
