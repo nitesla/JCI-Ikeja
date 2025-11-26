@@ -105,10 +105,15 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
+        <Link to="/join">
+          <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
+            Join Us
+          </Button>
+        </Link>
       </nav>
 
-      {/* Floating Join Us Button */}
-      <Link to="/join" className="fixed bottom-8 left-8 z-40">
+      {/* Floating Join Us Button - Bottom Right */}
+      <Link to="/join" className="fixed bottom-8 right-8 z-40">
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
