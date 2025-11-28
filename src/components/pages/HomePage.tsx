@@ -878,13 +878,6 @@ export default function HomePage() {
       {/* President Message Dialog */}
       <Dialog open={isPresidentDialogOpen} onOpenChange={setIsPresidentDialogOpen}>
         <DialogContent className="max-w-4xl max-h-[95vh] overflow-y-auto p-0 border-0">
-          <button
-            onClick={() => setIsPresidentDialogOpen(false)}
-            className="absolute top-4 right-4 z-50 p-2 hover:bg-gray-100 rounded-full transition-colors"
-          >
-            <X className="h-6 w-6 text-foreground" />
-          </button>
-          
           <div className="grid md:grid-cols-5 gap-0">
             {/* President Photo - Left Side */}
             <div className="md:col-span-2 bg-gradient-to-b from-primary to-primary/80 flex items-center justify-center min-h-[400px] md:min-h-[600px] p-6">
