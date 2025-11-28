@@ -877,54 +877,91 @@ export default function HomePage() {
 
       {/* President Message Dialog */}
       <Dialog open={isPresidentDialogOpen} onOpenChange={setIsPresidentDialogOpen}>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle className="font-heading text-3xl text-foreground">
-              Message From Our Chapter President
-            </DialogTitle>
-          </DialogHeader>
-          <div className="space-y-6">
-            {/* President Photo */}
-            <div className="w-full h-80 rounded-lg overflow-hidden">
-              <Image 
-                src="https://static.wixstatic.com/media/eafe55_f8adaa239fcb4c018cfe974cef66844a~mv2.png"
-                alt="Chapter President"
-                width={500}
-                className="w-full h-full object-cover"
-              />
+        <DialogContent className="max-w-4xl max-h-[95vh] overflow-y-auto p-0 border-0">
+          <button
+            onClick={() => setIsPresidentDialogOpen(false)}
+            className="absolute top-4 right-4 z-50 p-2 hover:bg-gray-100 rounded-full transition-colors"
+          >
+            <X className="h-6 w-6 text-foreground" />
+          </button>
+          
+          <div className="grid md:grid-cols-5 gap-0">
+            {/* President Photo - Left Side */}
+            <div className="md:col-span-2 bg-gradient-to-b from-primary to-primary/80 flex items-center justify-center min-h-[400px] md:min-h-[600px] p-6">
+              <div className="w-full h-full flex items-center justify-center">
+                <div className="w-full aspect-[3/4] rounded-lg overflow-hidden shadow-2xl">
+                  <Image 
+                    src="https://static.wixstatic.com/media/eafe55_f8adaa239fcb4c018cfe974cef66844a~mv2.png"
+                    alt="Chapter President JCIN Amb. Olubunmi Grace Fadare"
+                    width={400}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
 
-            {/* Full Message */}
-            <div className="space-y-4">
-              <p className="font-paragraph text-lg text-foreground/90 leading-relaxed">
-                Welcome to JCI Ikeja, where we believe in the power of young leaders to transform communities. 
-                Our chapter is dedicated to fostering excellence, encouraging innovation, and building meaningful 
-                connections among our members.
-              </p>
-              <p className="font-paragraph text-lg text-foreground/90 leading-relaxed">
-                Whether you're looking to develop your leadership skills, make a positive impact in your community, 
-                or connect with like-minded professionals, JCI Ikeja offers the perfect platform. We invite you to 
-                join us on this exciting journey of growth, service, and excellence.
-              </p>
-              <p className="font-paragraph text-lg text-foreground/90 leading-relaxed">
-                As your chapter president, I am committed to ensuring that every member has the opportunity to grow, 
-                contribute, and make a meaningful difference. Together, we are building a legacy of leadership and 
-                service that will inspire generations to come.
-              </p>
-              <p className="font-paragraph text-lg text-foreground/90 leading-relaxed">
-                I look forward to working with you and seeing the incredible impact we can create together. Let's 
-                make JCI Ikeja a beacon of hope and positive change in our community.
-              </p>
-            </div>
+            {/* Message Content - Right Side */}
+            <div className="md:col-span-3 p-8 md:p-10 flex flex-col justify-between">
+              <div>
+                <motion.h2 
+                  className="font-heading text-3xl md:text-4xl text-foreground mb-6"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  Message From Our Chapter President
+                </motion.h2>
+                
+                <motion.div 
+                  className="w-12 h-1 bg-primary mb-8"
+                  initial={{ width: 0 }}
+                  animate={{ width: 48 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                ></motion.div>
 
-            {/* President Info */}
-            <div className="border-t border-border pt-4">
-              <p className="font-heading text-xl text-foreground mb-1">
-                JCIN Amb. Olubunmi Grace Fadare
-              </p>
-              <p className="font-paragraph text-foreground/70">
-                2026 President, JCI Ikeja
-              </p>
+                {/* Full Message */}
+                <motion.div 
+                  className="space-y-5"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <p className="font-paragraph text-base md:text-lg text-foreground/90 leading-relaxed">
+                    Welcome to JCI Ikeja, where we believe in the power of young leaders to transform communities. 
+                    Our chapter is dedicated to fostering excellence, encouraging innovation, and building meaningful 
+                    connections among our members.
+                  </p>
+                  <p className="font-paragraph text-base md:text-lg text-foreground/90 leading-relaxed">
+                    Whether you're looking to develop your leadership skills, make a positive impact in your community, 
+                    or connect with like-minded professionals, JCI Ikeja offers the perfect platform. We invite you to 
+                    join us on this exciting journey of growth, service, and excellence.
+                  </p>
+                  <p className="font-paragraph text-base md:text-lg text-foreground/90 leading-relaxed">
+                    As your chapter president, I am committed to ensuring that every member has the opportunity to grow, 
+                    contribute, and make a meaningful difference. Together, we are building a legacy of leadership and 
+                    service that will inspire generations to come.
+                  </p>
+                  <p className="font-paragraph text-base md:text-lg text-foreground/90 leading-relaxed">
+                    I look forward to working with you and seeing the incredible impact we can create together. Let's 
+                    make JCI Ikeja a beacon of hope and positive change in our community.
+                  </p>
+                </motion.div>
+              </div>
+
+              {/* President Info */}
+              <motion.div 
+                className="border-t border-border pt-6 mt-8"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+              >
+                <p className="font-heading text-lg md:text-xl text-foreground mb-1">
+                  JCIN Amb. Olubunmi Grace Fadare
+                </p>
+                <p className="font-paragraph text-sm md:text-base text-foreground/70">
+                  2026 President, JCI Ikeja
+                </p>
+              </motion.div>
             </div>
           </div>
         </DialogContent>
