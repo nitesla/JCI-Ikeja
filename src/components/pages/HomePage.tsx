@@ -286,7 +286,7 @@ export default function HomePage() {
             >
               <div className="w-80 h-96 rounded-lg overflow-hidden">
                 <Image 
-                  src="https://static.wixstatic.com/media/eafe55_ca25050ab12f4b138cb7be45f0dc0eab~mv2.jpg"
+                  src="https://static.wixstatic.com/media/eafe55_f8adaa239fcb4c018cfe974cef66844a~mv2.png"
                   alt="Chapter President"
                   width={320}
                   className="w-full h-full object-cover"
@@ -887,7 +887,7 @@ export default function HomePage() {
             {/* President Photo */}
             <div className="w-full h-80 rounded-lg overflow-hidden">
               <Image 
-                src="https://static.wixstatic.com/media/eafe55_ca25050ab12f4b138cb7be45f0dc0eab~mv2.jpg"
+                src="https://static.wixstatic.com/media/eafe55_f8adaa239fcb4c018cfe974cef66844a~mv2.png"
                 alt="Chapter President"
                 width={500}
                 className="w-full h-full object-cover"
