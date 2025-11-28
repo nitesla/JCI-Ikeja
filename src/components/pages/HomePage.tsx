@@ -561,7 +561,7 @@ export default function HomePage() {
                     whileHover={{ scale: 1.15, rotate: 5 }}
                     transition={{ type: 'spring', stiffness: 300 }}
                   >
-                    <Users className="h-8 w-8 text-secondary-foreground" />
+                    <Users className="h-8 w-8 text-cyan-400" />
                   </motion.div>
                   <h3 className="font-heading text-xl text-secondary-foreground mb-2">Leadership</h3>
                   <p className="font-paragraph text-secondary-foreground/80">
@@ -577,7 +577,7 @@ export default function HomePage() {
                     whileHover={{ scale: 1.15, rotate: 5 }}
                     transition={{ type: 'spring', stiffness: 300 }}
                   >
-                    <Calendar className="h-8 w-8 text-secondary-foreground" />
+                    <Calendar className="h-8 w-8 text-cyan-400" />
                   </motion.div>
                   <h3 className="font-heading text-xl text-secondary-foreground mb-2">Community</h3>
                   <p className="font-paragraph text-secondary-foreground/80">
@@ -593,7 +593,7 @@ export default function HomePage() {
                     whileHover={{ scale: 1.15, rotate: 5 }}
                     transition={{ type: 'spring', stiffness: 300 }}
                   >
-                    <BookOpen className="h-8 w-8 text-secondary-foreground" />
+                    <BookOpen className="h-8 w-8 text-cyan-400" />
                   </motion.div>
                   <h3 className="font-heading text-xl text-secondary-foreground mb-2">Growth</h3>
                   <p className="font-paragraph text-secondary-foreground/80">
@@ -642,7 +642,7 @@ export default function HomePage() {
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ type: 'spring', stiffness: 300 }}
                   >
-                    <Users className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
+                    <Users className="h-12 w-12 text-cyan-400 mb-4 group-hover:text-cyan-400" />
                   </motion.div>
                   <h3 className="font-heading text-xl text-secondary-foreground mb-2">Board of Directors</h3>
                   <p className="font-paragraph text-secondary-foreground/80">
@@ -662,7 +662,7 @@ export default function HomePage() {
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ type: 'spring', stiffness: 300 }}
                   >
-                    <Calendar className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
+                    <Calendar className="h-12 w-12 text-cyan-400 mb-4 group-hover:text-cyan-400" />
                   </motion.div>
                   <h3 className="font-heading text-xl text-secondary-foreground mb-2">Events & Projects</h3>
                   <p className="font-paragraph text-secondary-foreground/80">
@@ -682,7 +682,7 @@ export default function HomePage() {
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ type: 'spring', stiffness: 300 }}
                   >
-                    <Camera className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
+                    <Camera className="h-12 w-12 text-cyan-400 mb-4 group-hover:text-cyan-400" />
                   </motion.div>
                   <h3 className="font-heading text-xl text-secondary-foreground mb-2">Gallery</h3>
                   <p className="font-paragraph text-secondary-foreground/80">
@@ -702,7 +702,7 @@ export default function HomePage() {
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ type: 'spring', stiffness: 300 }}
                   >
-                    <BookOpen className="h-12 w-12 text-secondary-foreground mb-4 group-hover:text-secondary-foreground" />
+                    <BookOpen className="h-12 w-12 text-cyan-400 mb-4 group-hover:text-cyan-400" />
                   </motion.div>
                   <h3 className="font-heading text-xl text-secondary-foreground mb-2">Newsletter</h3>
                   <p className="font-paragraph text-secondary-foreground/80">
