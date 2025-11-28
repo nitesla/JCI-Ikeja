@@ -278,7 +278,7 @@ export default function HomePage() {
         viewport={{ once: true, margin: '-100px' }}
       >
         <div className="max-w-[100rem] mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-6 items-center">
             {/* President Photo */}
             <motion.div 
               className="flex justify-center md:justify-start"
