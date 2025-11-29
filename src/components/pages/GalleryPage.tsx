@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Camera, Calendar, User, Menu } from 'lucide-react';
+import { Camera, Calendar, User, Menu, X } from 'lucide-react';
 import { BaseCrudService } from '@/integrations';
 import { GalleryImages } from '@/entities';
 
@@ -52,7 +52,7 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="w-full px-4 md:px-6 py-4 flex justify-between items-center bg-primary">
+      <nav className="fixed top-0 left-0 right-0 w-full px-4 md:px-6 py-4 flex justify-between items-center bg-primary shadow-lg z-50">
         <div className="flex items-center space-x-4 md:space-x-8">
           <Link to="/" className="flex items-center">
             <Image 
@@ -90,63 +90,78 @@ export default function GalleryPage() {
           {/* Mobile Menu Button */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
+              <Button variant="ghost" size="icon" className="text-cyan-400 hover:bg-primary-foreground/10 hover:text-cyan-300 transition-colors">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-64 bg-primary border-l border-primary-foreground/20">
-              <div className="flex flex-col space-y-6 mt-8">
-                <Link 
-                  to="/" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  Home
-                </Link>
-                <Link 
-                  to="/about" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  About
-                </Link>
-                <Link 
-                  to="/board" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  Board
-                </Link>
-                <Link 
-                  to="/gallery" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  Gallery
-                </Link>
-                <Link 
-                  to="/events" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  Events
-                </Link>
-                <Link 
-                  to="/newsletter" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  Newsletter
-                </Link>
-                <div className="border-t border-primary-foreground/20 pt-6">
-                  <Link 
-                    to="/join" 
+            <SheetContent side="right" className="w-64 bg-primary border-l border-primary-foreground/20 p-0">
+              <div className="flex flex-col h-full">
+                {/* Close Button */}
+                <div className="flex justify-end p-4">
+                  <Button 
+                    variant="ghost" 
+                    size="icon" 
                     onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-cyan-400 hover:bg-primary-foreground/10 hover:text-cyan-300 transition-colors"
                   >
-                    <Button className="w-full bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
-                      Join Us
-                    </Button>
+                    <X className="h-6 w-6" />
+                  </Button>
+                </div>
+                
+                {/* Menu Items */}
+                <div className="flex flex-col space-y-6 px-6 pb-8">
+                  <Link 
+                    to="/" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    Home
                   </Link>
+                  <Link 
+                    to="/about" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    About
+                  </Link>
+                  <Link 
+                    to="/board" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    Board
+                  </Link>
+                  <Link 
+                    to="/gallery" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    Gallery
+                  </Link>
+                  <Link 
+                    to="/events" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    Events
+                  </Link>
+                  <Link 
+                    to="/newsletter" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    Newsletter
+                  </Link>
+                  <div className="border-t border-primary-foreground/20 pt-6">
+                    <Link 
+                      to="/join" 
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <Button className="w-full bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
+                        Join Us
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </SheetContent>
@@ -154,214 +169,218 @@ export default function GalleryPage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="bg-primary py-20">
-        <div className="max-w-[100rem] mx-auto px-6 text-center">
-          <h1 className="font-heading text-5xl md:text-6xl text-primary-foreground mb-6 leading-tight">
-            Photo
-            <span className="block italic">Gallery</span>
-          </h1>
-          <p className="font-paragraph text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
-            Explore moments from our events, community service projects, and chapter activities 
-            that showcase our commitment to positive change.
-          </p>
-        </div>
-      </section>
+      {/* Add padding to account for fixed navbar */}
+      <div className="pt-20 md:pt-24">
+        {/* Hero Section */}
+        <section className="bg-primary py-20">
+          <div className="max-w-[100rem] mx-auto px-6 text-center">
+            <h1 className="font-heading text-5xl md:text-6xl text-primary-foreground mb-6 leading-tight">
+              Photo
+              <span className="block italic">Gallery</span>
+            </h1>
+            <p className="font-paragraph text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
+              Explore moments from our events, community service projects, and chapter activities 
+              that showcase our commitment to positive change.
+            </p>
+          </div>
+        </section>
 
-      {/* Gallery Grid */}
-      <section className="py-20">
-        <div className="max-w-[100rem] mx-auto px-6">
-          {galleryImages.length === 0 ? (
-            <div className="text-center py-16">
-              <Camera className="h-16 w-16 text-foreground/40 mx-auto mb-4" />
-              <h3 className="font-heading text-2xl text-foreground mb-2">No Images Found</h3>
-              <p className="font-paragraph text-foreground/80">
-                Gallery images will be available soon. Check back later to see our latest activities!
-              </p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {galleryImages.map((image) => (
-                <div 
-                  key={image._id} 
-                  className="group cursor-pointer"
-                  onClick={() => setSelectedImage(image)}
-                >
-                  <div className="aspect-square overflow-hidden rounded-lg bg-secondary">
-                    {image.imageFile ? (
-                      <Image 
-                        src={image.imageFile}
-                        alt={image.title || image.description || 'Gallery image'}
-                        width={400}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-softaccent flex items-center justify-center">
-                        <Camera className="h-12 w-12 text-secondary-foreground/60" />
+        {/* Gallery Grid */}
+        <section className="py-20">
+          <div className="max-w-[100rem] mx-auto px-6">
+            {galleryImages.length === 0 ? (
+              <div className="text-center py-16">
+                <Camera className="h-16 w-16 text-foreground/40 mx-auto mb-4" />
+                <h3 className="font-heading text-2xl text-foreground mb-2">No Images Found</h3>
+                <p className="font-paragraph text-foreground/80">
+                  Gallery images will be available soon. Check back later to see our latest activities!
+                </p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {galleryImages.map((image) => (
+                  <div 
+                    key={image._id} 
+                    className="group cursor-pointer"
+                    onClick={() => setSelectedImage(image)}
+                  >
+                    <div className="aspect-square overflow-hidden rounded-lg bg-secondary">
+                      {image.imageFile ? (
+                        <Image 
+                          src={image.imageFile}
+                          alt={image.title || 'Gallery image'}
+                          width={400}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-softaccent">
+                          <Camera className="h-12 w-12 text-secondary-foreground/60" />
+                        </div>
+                      )}
+                    </div>
+                    {image.title && (
+                      <p className="font-heading text-lg text-foreground mt-3 group-hover:text-primary transition-colors">
+                        {image.title}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Image Detail Modal */}
+        {selectedImage && (
+          <div 
+            className="fixed inset-0 bg-black/80 z-40 flex items-center justify-center p-4"
+            onClick={() => setSelectedImage(null)}
+          >
+            <div 
+              className="bg-background rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <h2 className="font-heading text-2xl text-foreground">
+                    {selectedImage.title || 'Image'}
+                  </h2>
+                  <button 
+                    onClick={() => setSelectedImage(null)}
+                    className="text-foreground/60 hover:text-foreground transition-colors"
+                  >
+                    <X className="h-6 w-6" />
+                  </button>
+                </div>
+
+                {selectedImage.imageFile && (
+                  <div className="mb-6 rounded-lg overflow-hidden">
+                    <Image 
+                      src={selectedImage.imageFile}
+                      alt={selectedImage.title || 'Gallery image'}
+                      width={600}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                )}
+
+                <div className="space-y-4">
+                  {selectedImage.description && (
+                    <div>
+                      <h3 className="font-heading text-lg text-foreground mb-2">Description</h3>
+                      <p className="font-paragraph text-foreground/80 leading-relaxed">
+                        {selectedImage.description}
+                      </p>
+                    </div>
+                  )}
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {selectedImage.dateTaken && (
+                      <div>
+                        <h4 className="font-heading text-sm text-foreground/60 mb-1">Date Taken</h4>
+                        <p className="font-paragraph text-foreground flex items-center gap-2">
+                          <Calendar className="h-4 w-4" />
+                          {formatDate(selectedImage.dateTaken)}
+                        </p>
+                      </div>
+                    )}
+                    {selectedImage.eventName && (
+                      <div>
+                        <h4 className="font-heading text-sm text-foreground/60 mb-1">Event</h4>
+                        <p className="font-paragraph text-foreground">
+                          {selectedImage.eventName}
+                        </p>
+                      </div>
+                    )}
+                    {selectedImage.photographer && (
+                      <div>
+                        <h4 className="font-heading text-sm text-foreground/60 mb-1">Photographer</h4>
+                        <p className="font-paragraph text-foreground flex items-center gap-2">
+                          <User className="h-4 w-4" />
+                          {selectedImage.photographer}
+                        </p>
                       </div>
                     )}
                   </div>
-                  {(image.title || image.eventName || image.dateTaken) && (
-                    <div className="mt-3">
-                      {image.title && (
-                        <h3 className="font-heading text-lg text-foreground mb-1">
-                          {image.title}
-                        </h3>
-                      )}
-                      <div className="flex items-center gap-4 text-sm text-foreground/70">
-                        {image.eventName && (
-                          <span className="font-paragraph">{image.eventName}</span>
-                        )}
-                        {image.dateTaken && (
-                          <span className="flex items-center gap-1 font-paragraph">
-                            <Calendar className="h-3 w-3" />
-                            {formatDate(image.dateTaken)}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  )}
                 </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Image Modal */}
-      {selectedImage && (
-        <div 
-          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedImage(null)}
-        >
-          <div 
-            className="max-w-4xl max-h-[90vh] bg-background rounded-lg overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="aspect-video overflow-hidden">
-              {selectedImage.imageFile ? (
-                <Image 
-                  src={selectedImage.imageFile}
-                  alt={selectedImage.title || selectedImage.description || 'Gallery image'}
-                  width={800}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="w-full h-full bg-softaccent flex items-center justify-center">
-                  <Camera className="h-16 w-16 text-secondary-foreground/60" />
-                </div>
-              )}
-            </div>
-            <div className="p-6">
-              {selectedImage.title && (
-                <h3 className="font-heading text-2xl text-foreground mb-2">
-                  {selectedImage.title}
-                </h3>
-              )}
-              {selectedImage.description && (
-                <p className="font-paragraph text-foreground/80 mb-4 leading-relaxed">
-                  {selectedImage.description}
-                </p>
-              )}
-              <div className="flex flex-wrap gap-4 text-sm text-foreground/70">
-                {selectedImage.eventName && (
-                  <span className="font-paragraph">Event: {selectedImage.eventName}</span>
-                )}
-                {selectedImage.dateTaken && (
-                  <span className="flex items-center gap-1 font-paragraph">
-                    <Calendar className="h-3 w-3" />
-                    {formatDate(selectedImage.dateTaken)}
-                  </span>
-                )}
-                {selectedImage.photographer && (
-                  <span className="flex items-center gap-1 font-paragraph">
-                    <User className="h-3 w-3" />
-                    {selectedImage.photographer}
-                  </span>
-                )}
-              </div>
-              <Button 
-                onClick={() => setSelectedImage(null)}
-                className="mt-4 bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90"
-              >
-                Close
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Call to Action */}
-      <section className="bg-secondary py-20">
-        <div className="max-w-[100rem] mx-auto px-6 text-center">
-          <h2 className="font-heading text-4xl text-secondary-foreground mb-6">
-            Be Part of Our Story
-          </h2>
-          <p className="font-paragraph text-xl text-secondary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Join our chapter and create memories while making a positive impact in your community.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/join">
-              <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90 px-8 py-3">
-                Become a Member
-              </Button>
-            </Link>
-            <Link to="/events">
-              <Button variant="outline" className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary px-8 py-3">
-                View Events
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-primary py-12">
-        <div className="max-w-[100rem] mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="font-heading text-xl text-primary-foreground mb-4">JCI Ikeja Chapter</h3>
-              <p className="font-paragraph text-primary-foreground/80 leading-relaxed">
-                Empowering young leaders to create positive change in Ikeja and beyond through 
-                community service and professional development.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-heading text-lg text-primary-foreground mb-4">Quick Links</h4>
-              <div className="space-y-2">
-                <Link to="/about" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  About Us
-                </Link>
-                <Link to="/board" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Board of Directors
-                </Link>
-                <Link to="/events" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Events & Projects
-                </Link>
-                <Link to="/join" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Join Us
-                </Link>
               </div>
             </div>
-            <div>
-              <h4 className="font-heading text-lg text-primary-foreground mb-4">Connect</h4>
-              <p className="font-paragraph text-primary-foreground/80">
-                Ready to make a difference? Join our community of young leaders today.
-              </p>
-              <Link to="/join" className="inline-block mt-4">
-                <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
-                  Get Involved
+          </div>
+        )}
+
+        {/* Call to Action */}
+        <section className="bg-primary py-20">
+          <div className="max-w-[100rem] mx-auto px-6 text-center">
+            <h2 className="font-heading text-4xl text-primary-foreground mb-6">
+              Join Our Community
+            </h2>
+            <p className="font-paragraph text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Be part of the moments that matter. Join JCI Ikeja and create lasting memories while 
+              making a positive impact in your community.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/join">
+                <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90 px-8 py-3">
+                  Become a Member
+                </Button>
+              </Link>
+              <Link to="/events">
+                <Button variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-3">
+                  View Events
                 </Button>
               </Link>
             </div>
           </div>
-          <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
-            <p className="font-paragraph text-primary-foreground/60">
-              © 2024 Junior Chamber International, Ikeja Chapter. All rights reserved.
-            </p>
+        </section>
+
+        {/* Footer */}
+        <footer className="bg-primary py-12">
+          <div className="max-w-[100rem] mx-auto px-6">
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <h3 className="font-heading text-xl text-primary-foreground mb-4">JCI Ikeja Chapter</h3>
+                <p className="font-paragraph text-primary-foreground/80 leading-relaxed">
+                  Empowering young leaders to create positive change in Ikeja and beyond through 
+                  community service and professional development.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-heading text-lg text-primary-foreground mb-4">Quick Links</h4>
+                <div className="space-y-2">
+                  <Link to="/about" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                    About Us
+                  </Link>
+                  <Link to="/board" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                    Board of Directors
+                  </Link>
+                  <Link to="/events" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                    Events & Projects
+                  </Link>
+                  <Link to="/join" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                    Join Us
+                  </Link>
+                </div>
+              </div>
+              <div>
+                <h4 className="font-heading text-lg text-primary-foreground mb-4">Connect</h4>
+                <p className="font-paragraph text-primary-foreground/80">
+                  Ready to make a difference? Join our community of young leaders today.
+                </p>
+                <Link to="/join" className="inline-block mt-4">
+                  <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
+                    Get Involved
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
+              <p className="font-paragraph text-primary-foreground/60">
+                © 2024 Junior Chamber International, Ikeja Chapter. All rights reserved.
+              </p>
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </div>
   );
 }

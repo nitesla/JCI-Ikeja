@@ -4,7 +4,7 @@ import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { BookOpen, ExternalLink, Calendar, Download, Menu } from 'lucide-react';
+import { BookOpen, ExternalLink, Calendar, Download, Menu, X } from 'lucide-react';
 import { BaseCrudService } from '@/integrations';
 import { Newsletters } from '@/entities';
 
@@ -58,7 +58,7 @@ export default function NewsletterPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="w-full px-4 md:px-6 py-4 flex justify-between items-center bg-primary">
+      <nav className="fixed top-0 left-0 right-0 w-full px-4 md:px-6 py-4 flex justify-between items-center bg-primary shadow-lg z-50">
         <div className="flex items-center space-x-4 md:space-x-8">
           <Link to="/" className="flex items-center">
             <Image 
@@ -96,63 +96,78 @@ export default function NewsletterPage() {
           {/* Mobile Menu Button */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
+              <Button variant="ghost" size="icon" className="text-cyan-400 hover:bg-primary-foreground/10 hover:text-cyan-300 transition-colors">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-64 bg-primary border-l border-primary-foreground/20">
-              <div className="flex flex-col space-y-6 mt-8">
-                <Link 
-                  to="/" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  Home
-                </Link>
-                <Link 
-                  to="/about" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  About
-                </Link>
-                <Link 
-                  to="/board" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  Board
-                </Link>
-                <Link 
-                  to="/gallery" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  Gallery
-                </Link>
-                <Link 
-                  to="/events" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  Events
-                </Link>
-                <Link 
-                  to="/newsletter" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  Newsletter
-                </Link>
-                <div className="border-t border-primary-foreground/20 pt-6">
-                  <Link 
-                    to="/join" 
+            <SheetContent side="right" className="w-64 bg-primary border-l border-primary-foreground/20 p-0">
+              <div className="flex flex-col h-full">
+                {/* Close Button */}
+                <div className="flex justify-end p-4">
+                  <Button 
+                    variant="ghost" 
+                    size="icon" 
                     onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-cyan-400 hover:bg-primary-foreground/10 hover:text-cyan-300 transition-colors"
                   >
-                    <Button className="w-full bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
-                      Join Us
-                    </Button>
+                    <X className="h-6 w-6" />
+                  </Button>
+                </div>
+                
+                {/* Menu Items */}
+                <div className="flex flex-col space-y-6 px-6 pb-8">
+                  <Link 
+                    to="/" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    Home
                   </Link>
+                  <Link 
+                    to="/about" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    About
+                  </Link>
+                  <Link 
+                    to="/board" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    Board
+                  </Link>
+                  <Link 
+                    to="/gallery" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    Gallery
+                  </Link>
+                  <Link 
+                    to="/events" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    Events
+                  </Link>
+                  <Link 
+                    to="/newsletter" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    Newsletter
+                  </Link>
+                  <div className="border-t border-primary-foreground/20 pt-6">
+                    <Link 
+                      to="/join" 
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <Button className="w-full bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
+                        Join Us
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </SheetContent>
@@ -160,243 +175,246 @@ export default function NewsletterPage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="bg-primary py-20">
-        <div className="max-w-[100rem] mx-auto px-6 text-center">
-          <h1 className="font-heading text-5xl md:text-6xl text-primary-foreground mb-6 leading-tight">
-            Chapter
-            <span className="block italic">Newsletter</span>
-          </h1>
-          <p className="font-paragraph text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
-            Stay informed about our latest activities, achievements, and upcoming events 
-            through our regular chapter newsletter.
-          </p>
-        </div>
-      </section>
-
-      {/* Newsletter Subscription */}
-      <section className="py-20 bg-secondary">
-        <div className="max-w-[100rem] mx-auto px-6">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-heading text-3xl text-secondary-foreground mb-6">
-              Subscribe to Our Newsletter
-            </h2>
-            <p className="font-paragraph text-lg text-secondary-foreground/80 mb-8 leading-relaxed">
-              Get the latest updates about our chapter activities, events, and community impact 
-              delivered directly to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input 
-                type="email" 
-                placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 rounded-lg border border-bordersubtle bg-background text-foreground font-paragraph focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90 px-6 py-3">
-                Subscribe
-              </Button>
-            </div>
-            <p className="font-paragraph text-sm text-secondary-foreground/60 mt-4">
-              We respect your privacy and will never share your email address.
+      {/* Add padding to account for fixed navbar */}
+      <div className="pt-20 md:pt-24">
+        {/* Hero Section */}
+        <section className="bg-primary py-20">
+          <div className="max-w-[100rem] mx-auto px-6 text-center">
+            <h1 className="font-heading text-5xl md:text-6xl text-primary-foreground mb-6 leading-tight">
+              Chapter
+              <span className="block italic">Newsletter</span>
+            </h1>
+            <p className="font-paragraph text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
+              Stay informed about our latest activities, achievements, and upcoming events 
+              through our regular chapter newsletter.
             </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Newsletter Archive */}
-      <section className="py-20">
-        <div className="max-w-[100rem] mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl text-foreground mb-6">Newsletter Archive</h2>
-            <p className="font-paragraph text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
-              Browse through our past newsletters to catch up on chapter news and activities.
-            </p>
-          </div>
-
-          {newsletters.length === 0 ? (
-            <div className="text-center py-16">
-              <BookOpen className="h-16 w-16 text-foreground/40 mx-auto mb-4" />
-              <h3 className="font-heading text-2xl text-foreground mb-2">No Newsletters Found</h3>
-              <p className="font-paragraph text-foreground/80">
-                Newsletter archives will be available soon. Subscribe above to get notified when new issues are published.
+        {/* Newsletter Subscription */}
+        <section className="py-20 bg-secondary">
+          <div className="max-w-[100rem] mx-auto px-6">
+            <div className="max-w-2xl mx-auto text-center">
+              <h2 className="font-heading text-3xl text-secondary-foreground mb-6">
+                Subscribe to Our Newsletter
+              </h2>
+              <p className="font-paragraph text-lg text-secondary-foreground/80 mb-8 leading-relaxed">
+                Get the latest updates about our chapter activities, events, and community impact 
+                delivered directly to your inbox.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input 
+                  type="email" 
+                  placeholder="Enter your email address"
+                  className="flex-1 px-4 py-3 rounded-lg border border-bordersubtle bg-background text-foreground font-paragraph focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+                <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90 px-6 py-3">
+                  Subscribe
+                </Button>
+              </div>
+              <p className="font-paragraph text-sm text-secondary-foreground/60 mt-4">
+                We respect your privacy and will never share your email address.
               </p>
             </div>
-          ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {newsletters.map((newsletter) => (
-                <Card key={newsletter._id} className="bg-secondary border-bordersubtle overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-[3/4] overflow-hidden">
-                    {newsletter.coverImage ? (
-                      <Image 
-                        src={newsletter.coverImage}
-                        alt={newsletter.title || 'Newsletter cover'}
-                        width={400}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-softaccent flex items-center justify-center">
-                        <BookOpen className="h-16 w-16 text-secondary-foreground/60" />
-                      </div>
-                    )}
-                  </div>
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="font-heading text-xl text-secondary-foreground">
-                        {newsletter.title || 'Newsletter'}
-                      </h3>
-                      {newsletter.issueNumber && (
-                        <span className="font-paragraph text-sm text-secondary-foreground/70 bg-softaccent px-2 py-1 rounded">
-                          Issue #{newsletter.issueNumber}
-                        </span>
+          </div>
+        </section>
+
+        {/* Newsletter Archive */}
+        <section className="py-20">
+          <div className="max-w-[100rem] mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="font-heading text-4xl text-foreground mb-6">Newsletter Archive</h2>
+              <p className="font-paragraph text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
+                Browse through our past newsletters to catch up on chapter news and activities.
+              </p>
+            </div>
+
+            {newsletters.length === 0 ? (
+              <div className="text-center py-16">
+                <BookOpen className="h-16 w-16 text-foreground/40 mx-auto mb-4" />
+                <h3 className="font-heading text-2xl text-foreground mb-2">No Newsletters Found</h3>
+                <p className="font-paragraph text-foreground/80">
+                  Newsletter archives will be available soon. Subscribe above to get notified when new issues are published.
+                </p>
+              </div>
+            ) : (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {newsletters.map((newsletter) => (
+                  <Card key={newsletter._id} className="bg-secondary border-bordersubtle overflow-hidden hover:shadow-lg transition-shadow">
+                    <div className="aspect-[3/4] overflow-hidden">
+                      {newsletter.coverImage ? (
+                        <Image 
+                          src={newsletter.coverImage}
+                          alt={newsletter.title || 'Newsletter cover'}
+                          width={400}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-softaccent flex items-center justify-center">
+                          <BookOpen className="h-16 w-16 text-secondary-foreground/60" />
+                        </div>
                       )}
                     </div>
-                    
-                    {newsletter.publicationDate && (
-                      <div className="flex items-center gap-2 text-sm text-secondary-foreground/70 mb-4">
-                        <Calendar className="h-4 w-4" />
-                        <span className="font-paragraph">{formatDate(newsletter.publicationDate)}</span>
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between mb-3">
+                        <h3 className="font-heading text-xl text-secondary-foreground">
+                          {newsletter.title || 'Newsletter'}
+                        </h3>
+                        {newsletter.issueNumber && (
+                          <span className="font-paragraph text-sm text-secondary-foreground/70 bg-softaccent px-2 py-1 rounded">
+                            Issue #{newsletter.issueNumber}
+                          </span>
+                        )}
                       </div>
-                    )}
-                    
-                    {newsletter.summary && (
-                      <p className="font-paragraph text-secondary-foreground/80 mb-4 leading-relaxed line-clamp-3">
-                        {newsletter.summary}
-                      </p>
-                    )}
-                    
-                    {newsletter.newsletterUrl && (
-                      <a 
-                        href={newsletter.newsletterUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center font-paragraph text-sm text-secondary-foreground hover:text-secondary-foreground/80 transition-colors"
-                      >
-                        <Download className="h-4 w-4 mr-1" />
-                        Read Newsletter
-                        <ExternalLink className="h-4 w-4 ml-1" />
-                      </a>
-                    )}
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+                      
+                      {newsletter.publicationDate && (
+                        <div className="flex items-center gap-2 text-sm text-secondary-foreground/70 mb-4">
+                          <Calendar className="h-4 w-4" />
+                          <span className="font-paragraph">{formatDate(newsletter.publicationDate)}</span>
+                        </div>
+                      )}
+                      
+                      {newsletter.summary && (
+                        <p className="font-paragraph text-secondary-foreground/80 mb-4 leading-relaxed line-clamp-3">
+                          {newsletter.summary}
+                        </p>
+                      )}
+                      
+                      {newsletter.newsletterUrl && (
+                        <a 
+                          href={newsletter.newsletterUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center font-paragraph text-sm text-secondary-foreground hover:text-secondary-foreground/80 transition-colors"
+                        >
+                          <Download className="h-4 w-4 mr-1" />
+                          Read Newsletter
+                          <ExternalLink className="h-4 w-4 ml-1" />
+                        </a>
+                      )}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
 
-      {/* Newsletter Benefits */}
-      <section className="bg-secondary py-20">
-        <div className="max-w-[100rem] mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl text-secondary-foreground mb-6">
-              Why Subscribe?
+        {/* Newsletter Benefits */}
+        <section className="bg-secondary py-20">
+          <div className="max-w-[100rem] mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="font-heading text-4xl text-secondary-foreground mb-6">
+                Why Subscribe?
+              </h2>
+              <p className="font-paragraph text-xl text-secondary-foreground/90 max-w-2xl mx-auto leading-relaxed">
+                Our newsletter keeps you connected with the JCI Ikeja community and informed about opportunities to get involved.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Calendar className="h-8 w-8 text-secondary-foreground" />
+                </div>
+                <h3 className="font-heading text-xl text-secondary-foreground mb-4">Event Updates</h3>
+                <p className="font-paragraph text-secondary-foreground/80 leading-relaxed">
+                  Be the first to know about upcoming events, workshops, and community service opportunities.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BookOpen className="h-8 w-8 text-secondary-foreground" />
+                </div>
+                <h3 className="font-heading text-xl text-secondary-foreground mb-4">Chapter News</h3>
+                <p className="font-paragraph text-secondary-foreground/80 leading-relaxed">
+                  Stay updated on chapter achievements, member spotlights, and organizational developments.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
+                  <ExternalLink className="h-8 w-8 text-secondary-foreground" />
+                </div>
+                <h3 className="font-heading text-xl text-secondary-foreground mb-4">Opportunities</h3>
+                <p className="font-paragraph text-secondary-foreground/80 leading-relaxed">
+                  Discover leadership development programs, networking events, and volunteer opportunities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Call to Action */}
+        <section className="bg-primary py-20">
+          <div className="max-w-[100rem] mx-auto px-6 text-center">
+            <h2 className="font-heading text-4xl text-primary-foreground mb-6">
+              Stay Connected
             </h2>
-            <p className="font-paragraph text-xl text-secondary-foreground/90 max-w-2xl mx-auto leading-relaxed">
-              Our newsletter keeps you connected with the JCI Ikeja community and informed about opportunities to get involved.
+            <p className="font-paragraph text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Join our chapter and be part of a community that's making a real difference in JCI Ikeja and beyond.
             </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
-                <Calendar className="h-8 w-8 text-secondary-foreground" />
-              </div>
-              <h3 className="font-heading text-xl text-secondary-foreground mb-4">Event Updates</h3>
-              <p className="font-paragraph text-secondary-foreground/80 leading-relaxed">
-                Be the first to know about upcoming events, workshops, and community service opportunities.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
-                <BookOpen className="h-8 w-8 text-secondary-foreground" />
-              </div>
-              <h3 className="font-heading text-xl text-secondary-foreground mb-4">Chapter News</h3>
-              <p className="font-paragraph text-secondary-foreground/80 leading-relaxed">
-                Stay updated on chapter achievements, member spotlights, and organizational developments.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
-                <ExternalLink className="h-8 w-8 text-secondary-foreground" />
-              </div>
-              <h3 className="font-heading text-xl text-secondary-foreground mb-4">Opportunities</h3>
-              <p className="font-paragraph text-secondary-foreground/80 leading-relaxed">
-                Discover leadership development programs, networking events, and volunteer opportunities.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="bg-primary py-20">
-        <div className="max-w-[100rem] mx-auto px-6 text-center">
-          <h2 className="font-heading text-4xl text-primary-foreground mb-6">
-            Stay Connected
-          </h2>
-          <p className="font-paragraph text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Join our chapter and be part of a community that's making a real difference in JCI Ikeja and beyond.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/join">
-              <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90 px-8 py-3">
-                Become a Member
-              </Button>
-            </Link>
-            <Link to="/events">
-              <Button variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-3">
-                View Events
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-primary py-12">
-        <div className="max-w-[100rem] mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="font-heading text-xl text-primary-foreground mb-4">JCI Ikeja Chapter</h3>
-              <p className="font-paragraph text-primary-foreground/80 leading-relaxed">
-                Empowering young leaders to create positive change in Ikeja and beyond through 
-                community service and professional development.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-heading text-lg text-primary-foreground mb-4">Quick Links</h4>
-              <div className="space-y-2">
-                <Link to="/about" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  About Us
-                </Link>
-                <Link to="/board" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Board of Directors
-                </Link>
-                <Link to="/events" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Events & Projects
-                </Link>
-                <Link to="/join" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Join Us
-                </Link>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-heading text-lg text-primary-foreground mb-4">Connect</h4>
-              <p className="font-paragraph text-primary-foreground/80">
-                Ready to make a difference? Join our community of young leaders today.
-              </p>
-              <Link to="/join" className="inline-block mt-4">
-                <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
-                  Get Involved
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/join">
+                <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90 px-8 py-3">
+                  Become a Member
+                </Button>
+              </Link>
+              <Link to="/events">
+                <Button variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-3">
+                  View Events
                 </Button>
               </Link>
             </div>
           </div>
-          <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
-            <p className="font-paragraph text-primary-foreground/60">
-              © 2024 Junior Chamber International, Ikeja Chapter. All rights reserved.
-            </p>
+        </section>
+
+        {/* Footer */}
+        <footer className="bg-primary py-12">
+          <div className="max-w-[100rem] mx-auto px-6">
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <h3 className="font-heading text-xl text-primary-foreground mb-4">JCI Ikeja Chapter</h3>
+                <p className="font-paragraph text-primary-foreground/80 leading-relaxed">
+                  Empowering young leaders to create positive change in Ikeja and beyond through 
+                  community service and professional development.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-heading text-lg text-primary-foreground mb-4">Quick Links</h4>
+                <div className="space-y-2">
+                  <Link to="/about" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                    About Us
+                  </Link>
+                  <Link to="/board" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                    Board of Directors
+                  </Link>
+                  <Link to="/events" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                    Events & Projects
+                  </Link>
+                  <Link to="/join" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                    Join Us
+                  </Link>
+                </div>
+              </div>
+              <div>
+                <h4 className="font-heading text-lg text-primary-foreground mb-4">Connect</h4>
+                <p className="font-paragraph text-primary-foreground/80">
+                  Ready to make a difference? Join our community of young leaders today.
+                </p>
+                <Link to="/join" className="inline-block mt-4">
+                  <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
+                    Get Involved
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
+              <p className="font-paragraph text-primary-foreground/60">
+                © 2024 Junior Chamber International, Ikeja Chapter. All rights reserved.
+              </p>
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </div>
   );
 }

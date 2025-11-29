@@ -4,7 +4,7 @@ import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { ExternalLink, User, Menu } from 'lucide-react';
+import { ExternalLink, User, Menu, X } from 'lucide-react';
 import { BaseCrudService } from '@/integrations';
 import { BoardofDirectors } from '@/entities';
 
@@ -42,7 +42,7 @@ export default function BoardPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="w-full px-4 md:px-6 py-4 flex justify-between items-center bg-primary">
+      <nav className="fixed top-0 left-0 right-0 w-full px-4 md:px-6 py-4 flex justify-between items-center bg-primary shadow-lg z-50">
         <div className="flex items-center space-x-4 md:space-x-8">
           <Link to="/" className="flex items-center">
             <Image 
@@ -80,63 +80,78 @@ export default function BoardPage() {
           {/* Mobile Menu Button */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
+              <Button variant="ghost" size="icon" className="text-cyan-400 hover:bg-primary-foreground/10 hover:text-cyan-300 transition-colors">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-64 bg-primary border-l border-primary-foreground/20">
-              <div className="flex flex-col space-y-6 mt-8">
-                <Link 
-                  to="/" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  Home
-                </Link>
-                <Link 
-                  to="/about" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  About
-                </Link>
-                <Link 
-                  to="/board" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  Board
-                </Link>
-                <Link 
-                  to="/gallery" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  Gallery
-                </Link>
-                <Link 
-                  to="/events" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  Events
-                </Link>
-                <Link 
-                  to="/newsletter" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
-                >
-                  Newsletter
-                </Link>
-                <div className="border-t border-primary-foreground/20 pt-6">
-                  <Link 
-                    to="/join" 
+            <SheetContent side="right" className="w-64 bg-primary border-l border-primary-foreground/20 p-0">
+              <div className="flex flex-col h-full">
+                {/* Close Button */}
+                <div className="flex justify-end p-4">
+                  <Button 
+                    variant="ghost" 
+                    size="icon" 
                     onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-cyan-400 hover:bg-primary-foreground/10 hover:text-cyan-300 transition-colors"
                   >
-                    <Button className="w-full bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
-                      Join Us
-                    </Button>
+                    <X className="h-6 w-6" />
+                  </Button>
+                </div>
+                
+                {/* Menu Items */}
+                <div className="flex flex-col space-y-6 px-6 pb-8">
+                  <Link 
+                    to="/" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    Home
                   </Link>
+                  <Link 
+                    to="/about" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    About
+                  </Link>
+                  <Link 
+                    to="/board" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    Board
+                  </Link>
+                  <Link 
+                    to="/gallery" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    Gallery
+                  </Link>
+                  <Link 
+                    to="/events" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    Events
+                  </Link>
+                  <Link 
+                    to="/newsletter" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                  >
+                    Newsletter
+                  </Link>
+                  <div className="border-t border-primary-foreground/20 pt-6">
+                    <Link 
+                      to="/join" 
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <Button className="w-full bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
+                        Join Us
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </SheetContent>
@@ -144,8 +159,10 @@ export default function BoardPage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="bg-primary py-20">
+      {/* Add padding to account for fixed navbar */}
+      <div className="pt-20 md:pt-24">
+        {/* Hero Section */}
+        <section className="bg-primary py-20">
         <div className="max-w-[100rem] mx-auto px-6 text-center">
           <h1 className="font-heading text-5xl md:text-6xl text-primary-foreground mb-6 leading-tight">
             Board of
@@ -328,6 +345,7 @@ export default function BoardPage() {
           </div>
         </div>
       </footer>
+      </div>
     </div>
   );
 }
