@@ -159,12 +159,26 @@ export default function HomePage() {
         {/* Mobile Menu Button */}
         <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
+            <Button variant="ghost" size="icon" className="text-cyan-400 hover:bg-primary-foreground/10 hover:text-cyan-300 transition-colors">
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-64 bg-primary border-l border-primary-foreground/20">
-            <div className="flex flex-col space-y-6 mt-8">
+          <SheetContent side="right" className="w-64 bg-primary border-l border-primary-foreground/20 p-0">
+            <div className="flex flex-col h-full">
+              {/* Close Button */}
+              <div className="flex justify-end p-4">
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-cyan-400 hover:bg-primary-foreground/10 hover:text-cyan-300 transition-colors"
+                >
+                  <X className="h-6 w-6" />
+                </Button>
+              </div>
+              
+              {/* Menu Items */}
+              <div className="flex flex-col space-y-6 px-6 pb-8">
               <Link 
                 to="/about" 
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -210,6 +224,7 @@ export default function HomePage() {
                   </Button>
                 </Link>
               </div>
+            </div>
             </div>
           </SheetContent>
         </Sheet>

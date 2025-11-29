@@ -137,10 +137,10 @@ export default function AboutPage() {
             <div>
               <h1 className="font-heading text-5xl md:text-6xl text-primary-foreground mb-6 leading-tight">
                 About
-                <span className="block italic">Our Chapter</span>
+                <span className="block italic">Our Local Organization</span>
               </h1>
               <p className="font-paragraph text-xl text-primary-foreground/90 leading-relaxed">
-                The Junior Chamber International, Ikeja Chapter, is a vibrant community of young 
+                The Junior Chamber International, Ikeja Local Organization, is a vibrant community of young 
                 professionals dedicated to creating positive change through leadership development, 
                 community service, and international cooperation.
               </p>
@@ -148,7 +148,7 @@ export default function AboutPage() {
             <div className="relative">
               <Image 
                 src="https://static.wixstatic.com/media/eafe55_5b5bd1c27eb74759a8a45415a0d71b86~mv2.png?originWidth=576&originHeight=384"
-                alt="JCI Ikeja Chapter members at community event"
+                alt="JCI Ikeja Local Organization members at community event"
                 width={600}
                 className="w-full h-96 object-cover rounded-lg"
               />
@@ -205,7 +205,7 @@ export default function AboutPage() {
             <div>
               <Image 
                 src="https://static.wixstatic.com/media/eafe55_91ec02a4786749aaba5c184212b2d5d6~mv2.png?originWidth=576&originHeight=384"
-                alt="Historical photo of JCI Ikeja Chapter founding"
+                alt="Historical photo of JCI Ikeja Local Organization founding"
                 width={600}
                 className="w-full h-96 object-cover rounded-lg"
               />
@@ -214,7 +214,7 @@ export default function AboutPage() {
               <h2 className="font-heading text-4xl text-secondary-foreground mb-6">Our Story</h2>
               <div className="space-y-4 font-paragraph text-lg text-secondary-foreground/90 leading-relaxed">
                 <p>
-                  Founded as part of the global Junior Chamber International network, the Ikeja Chapter 
+                  Founded as part of the global Junior Chamber International network, the Ikeja Local Organization 
                   has been a cornerstone of youth leadership development in Lagos State for decades.
                 </p>
                 <p>
@@ -312,7 +312,7 @@ export default function AboutPage() {
         <div className="max-w-[100rem] mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="font-heading text-xl text-primary-foreground mb-4">JCI Ikeja Chapter</h3>
+              <h3 className="font-heading text-xl text-primary-foreground mb-4">JCI Ikeja Local Organization</h3>
               <p className="font-paragraph text-primary-foreground/80 leading-relaxed">
                 Empowering young leaders to create positive change in Ikeja and beyond through 
                 community service and professional development.
@@ -349,7 +349,7 @@ export default function AboutPage() {
           </div>
           <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
             <p className="font-paragraph text-primary-foreground/60">
-              © 2024 Junior Chamber International, Ikeja Chapter. All rights reserved.
+              © 2024 Junior Chamber International, Ikeja Local Organization. All rights reserved.
             </p>
           </div>
         </div>

@@ -181,12 +181,12 @@ export default function NewsletterPage() {
         <section className="bg-primary py-20">
           <div className="max-w-[100rem] mx-auto px-6 text-center">
             <h1 className="font-heading text-5xl md:text-6xl text-primary-foreground mb-6 leading-tight">
-              Chapter
+              Local Organization
               <span className="block italic">Newsletter</span>
             </h1>
             <p className="font-paragraph text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
               Stay informed about our latest activities, achievements, and upcoming events 
-              through our regular chapter newsletter.
+              through our regular local organization newsletter.
             </p>
           </div>
         </section>
@@ -199,7 +199,7 @@ export default function NewsletterPage() {
                 Subscribe to Our Newsletter
               </h2>
               <p className="font-paragraph text-lg text-secondary-foreground/80 mb-8 leading-relaxed">
-                Get the latest updates about our chapter activities, events, and community impact 
+                Get the latest updates about our local organization activities, events, and community impact 
                 delivered directly to your inbox.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
