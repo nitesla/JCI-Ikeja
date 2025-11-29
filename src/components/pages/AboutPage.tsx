@@ -1,20 +1,24 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Target, Globe, Heart, Users } from 'lucide-react';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Target, Globe, Heart, Users, Menu } from 'lucide-react';
 
 export default function AboutPage() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="w-full px-6 py-4 flex justify-between items-center bg-primary">
-        <div className="flex items-center space-x-8">
+      <nav className="w-full px-4 md:px-6 py-4 flex justify-between items-center bg-primary">
+        <div className="flex items-center space-x-4 md:space-x-8">
           <Link to="/" className="flex items-center">
             <Image 
               src="https://static.wixstatic.com/media/eafe55_e8f605345e954984936715bef05b9357~mv2.png"
               alt="JCI Ikeja Logo"
               width={160}
-              className="h-16 w-auto"
+              className="h-12 md:h-16 w-auto"
             />
           </Link>
           <div className="hidden md:flex space-x-6">
@@ -35,22 +39,79 @@ export default function AboutPage() {
             </Link>
           </div>
         </div>
-        <Link to="/join">
-          <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
-            Join Us
-          </Button>
-        </Link>
-      </nav>
-
-      {/* Breadcrumb */}
-      <div className="bg-secondary py-4">
-        <div className="max-w-[100rem] mx-auto px-6">
-          <Link to="/" className="inline-flex items-center text-secondary-foreground/80 hover:text-secondary-foreground font-paragraph text-sm transition-colors">
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Home
+        <div className="flex items-center gap-4">
+          <Link to="/join" className="hidden md:block">
+            <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
+              Join Us
+            </Button>
           </Link>
+          
+          {/* Mobile Menu Button */}
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-64 bg-primary border-l border-primary-foreground/20">
+              <div className="flex flex-col space-y-6 mt-8">
+                <Link 
+                  to="/" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                >
+                  Home
+                </Link>
+                <Link 
+                  to="/about" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                >
+                  About
+                </Link>
+                <Link 
+                  to="/board" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                >
+                  Board
+                </Link>
+                <Link 
+                  to="/gallery" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                >
+                  Gallery
+                </Link>
+                <Link 
+                  to="/events" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                >
+                  Events
+                </Link>
+                <Link 
+                  to="/newsletter" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+                >
+                  Newsletter
+                </Link>
+                <div className="border-t border-primary-foreground/20 pt-6">
+                  <Link 
+                    to="/join" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Button className="w-full bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
+                      Join Us
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
-      </div>
+      </nav>
 
       {/* Hero Section */}
       <section className="bg-primary py-20">
