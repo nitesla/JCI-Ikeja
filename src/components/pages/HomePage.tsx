@@ -166,59 +166,122 @@ export default function HomePage() {
       </Link>
 
       {/* Hero Section - Full Bleed with Asymmetrical Layout */}
-      <section className="relative w-full max-w-[120rem] mx-auto px-6 py-20 min-h-[80vh] flex items-center overflow-hidden">
-        {/* Background Images - Asymmetrically Placed with Looping Pop Animation */}
-        <motion.div 
-          className="absolute top-16 left-8 w-32 h-40 rounded-lg overflow-hidden"
-          {...heroImageLoop(0)}
-        >
-          <Image 
-            src="https://static.wixstatic.com/media/eafe55_ca25050ab12f4b138cb7be45f0dc0eab~mv2.jpg"
-            alt="Leadership meeting"
-            width={128}
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
+      <section className="relative w-full max-w-[120rem] mx-auto px-4 md:px-6 py-12 md:py-20 min-h-[90vh] md:min-h-[100vh] flex items-center overflow-hidden">
+        {/* Background - Gradient with Subtle Pattern */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/95 z-0">
+          {/* Subtle diagonal lines pattern */}
+          <div className="absolute inset-0 opacity-5" style={{
+            backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px)'
+          }}></div>
+        </div>
 
-        <motion.div 
-          className="absolute bottom-20 left-16 w-40 h-48 rounded-lg overflow-hidden"
-          {...heroImageLoop(1)}
-        >
-          <Image 
-            src="https://static.wixstatic.com/media/eafe55_02e52875f7d547358cc367dd2aa08285~mv2.jpg"
-            alt="Community service project"
-            width={160}
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
+        {/* Background Images - Responsive Layout */}
+        {/* Mobile: Single column centered, Desktop: Asymmetrical grid */}
+        <div className="absolute inset-0 z-0 hidden md:block">
+          {/* Top Left Image */}
+          <motion.div 
+            className="absolute top-8 left-6 lg:left-12 w-24 h-32 lg:w-32 lg:h-40 rounded-lg overflow-hidden"
+            {...heroImageLoop(0)}
+          >
+            <Image 
+              src="https://static.wixstatic.com/media/eafe55_ca25050ab12f4b138cb7be45f0dc0eab~mv2.jpg"
+              alt="Leadership meeting"
+              width={128}
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
 
-        <motion.div 
-          className="absolute top-20 right-12 w-36 h-44 rounded-lg overflow-hidden"
-          {...heroImageLoop(2)}
-        >
-          <Image 
-            src="https://static.wixstatic.com/media/eafe55_c68cf69a85424daab3d2714eff1e518a~mv2.jpg"
-            alt="Networking event"
-            width={144}
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
+          {/* Bottom Left Image */}
+          <motion.div 
+            className="absolute bottom-12 left-8 lg:left-16 w-28 h-36 lg:w-40 lg:h-48 rounded-lg overflow-hidden"
+            {...heroImageLoop(1)}
+          >
+            <Image 
+              src="https://static.wixstatic.com/media/eafe55_02e52875f7d547358cc367dd2aa08285~mv2.jpg"
+              alt="Community service project"
+              width={160}
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
 
-        <motion.div 
-          className="absolute bottom-16 right-8 w-44 h-36 rounded-lg overflow-hidden"
-          {...heroImageLoop(3)}
-        >
-          <Image 
-            src="https://static.wixstatic.com/media/eafe55_4aa2c82f41984951bccebd97e31e0220~mv2.jpg"
-            alt="Youth development program"
-            width={176}
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
+          {/* Top Right Image */}
+          <motion.div 
+            className="absolute top-12 right-6 lg:right-12 w-26 h-32 lg:w-36 lg:h-44 rounded-lg overflow-hidden"
+            {...heroImageLoop(2)}
+          >
+            <Image 
+              src="https://static.wixstatic.com/media/eafe55_c68cf69a85424daab3d2714eff1e518a~mv2.jpg"
+              alt="Networking event"
+              width={144}
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+
+          {/* Bottom Right Image */}
+          <motion.div 
+            className="absolute bottom-8 right-4 lg:right-8 w-32 h-28 lg:w-44 lg:h-36 rounded-lg overflow-hidden"
+            {...heroImageLoop(3)}
+          >
+            <Image 
+              src="https://static.wixstatic.com/media/eafe55_4aa2c82f41984951bccebd97e31e0220~mv2.jpg"
+              alt="Youth development program"
+              width={176}
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+        </div>
+
+        {/* Mobile Image Gallery - Stacked Below Content */}
+        <div className="absolute bottom-0 left-0 right-0 md:hidden z-0 flex gap-2 px-4 pb-4 overflow-x-auto">
+          <motion.div 
+            className="flex-shrink-0 w-20 h-24 rounded-lg overflow-hidden"
+            {...heroImageLoop(0)}
+          >
+            <Image 
+              src="https://static.wixstatic.com/media/eafe55_ca25050ab12f4b138cb7be45f0dc0eab~mv2.jpg"
+              alt="Leadership meeting"
+              width={80}
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+          <motion.div 
+            className="flex-shrink-0 w-20 h-24 rounded-lg overflow-hidden"
+            {...heroImageLoop(1)}
+          >
+            <Image 
+              src="https://static.wixstatic.com/media/eafe55_02e52875f7d547358cc367dd2aa08285~mv2.jpg"
+              alt="Community service project"
+              width={80}
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+          <motion.div 
+            className="flex-shrink-0 w-20 h-24 rounded-lg overflow-hidden"
+            {...heroImageLoop(2)}
+          >
+            <Image 
+              src="https://static.wixstatic.com/media/eafe55_c68cf69a85424daab3d2714eff1e518a~mv2.jpg"
+              alt="Networking event"
+              width={80}
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+          <motion.div 
+            className="flex-shrink-0 w-20 h-24 rounded-lg overflow-hidden"
+            {...heroImageLoop(3)}
+          >
+            <Image 
+              src="https://static.wixstatic.com/media/eafe55_4aa2c82f41984951bccebd97e31e0220~mv2.jpg"
+              alt="Youth development program"
+              width={80}
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+        </div>
 
         {/* Central Content */}
         <motion.div 
-          className="relative z-10 text-center max-w-4xl mx-auto"
+          className="relative z-10 text-center max-w-4xl mx-auto md:mb-0 mb-32"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
