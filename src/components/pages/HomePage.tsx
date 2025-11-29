@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { ArrowRight, Users, Calendar, BookOpen, Camera, Award, Users2, CheckCircle2, Heart, X } from 'lucide-react';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { ArrowRight, Users, Calendar, BookOpen, Camera, Award, Users2, CheckCircle2, Heart, X, Menu } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 // Animation variants
@@ -97,6 +98,7 @@ const heroImageLoop = (delay: number) => ({
 export default function HomePage() {
   const [isPresidentDialogOpen, setIsPresidentDialogOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Carousel images for the statistics section
   const carouselImages = [
@@ -116,17 +118,18 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-primary">
-      {/* Navigation */}
-      <nav className="w-full px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center space-x-8">
-          <Link to="/" className="flex items-center">
+      {/* Fixed Navigation */}
+      <nav className="fixed top-0 left-0 right-0 w-full px-4 md:px-6 py-4 flex justify-between items-center bg-primary shadow-lg z-50">
+        <div className="flex items-center space-x-4 md:space-x-8">
+          <Link to="/" className="flex items-center flex-shrink-0">
             <Image 
               src="https://static.wixstatic.com/media/eafe55_e8f605345e954984936715bef05b9357~mv2.png"
               alt="JCI Ikeja Logo"
               width={160}
-              className="h-16 w-auto"
+              className="h-12 md:h-16 w-auto"
             />
           </Link>
+          {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
             <Link to="/about" className="text-primary-foreground/80 hover:text-primary-foreground font-paragraph text-sm transition-colors">
               About
@@ -145,15 +148,75 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <Link to="/join">
+
+        {/* Desktop Join Button */}
+        <Link to="/join" className="hidden md:block">
           <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
             Join Us
           </Button>
         </Link>
+
+        {/* Mobile Menu Button */}
+        <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+          <SheetTrigger asChild className="md:hidden">
+            <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
+              <Menu className="h-6 w-6" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-64 bg-primary border-l border-primary-foreground/20">
+            <div className="flex flex-col space-y-6 mt-8">
+              <Link 
+                to="/about" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+              >
+                About
+              </Link>
+              <Link 
+                to="/board" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+              >
+                Board
+              </Link>
+              <Link 
+                to="/gallery" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+              >
+                Gallery
+              </Link>
+              <Link 
+                to="/events" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+              >
+                Events
+              </Link>
+              <Link 
+                to="/newsletter" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-primary-foreground/90 hover:text-primary-foreground font-paragraph text-base transition-colors"
+              >
+                Newsletter
+              </Link>
+              <div className="border-t border-primary-foreground/20 pt-6">
+                <Link 
+                  to="/join" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Button className="w-full bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
+                    Join Us
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </SheetContent>
+        </Sheet>
       </nav>
 
       {/* Floating Join Us Button - Bottom Right */}
-      <Link to="/join" className="fixed bottom-8 right-8 z-40">
+      <Link to="/join" className="fixed bottom-8 right-8 z-40 hidden md:block">
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
@@ -166,7 +229,7 @@ export default function HomePage() {
       </Link>
 
       {/* Hero Section - Full Bleed with Asymmetrical Layout */}
-      <section className="relative w-full max-w-[120rem] mx-auto px-4 md:px-6 py-12 md:py-20 min-h-[90vh] md:min-h-[100vh] flex items-center overflow-hidden">
+      <section className="relative w-full max-w-[120rem] mx-auto px-4 md:px-6 py-12 md:py-20 min-h-[90vh] md:min-h-[100vh] flex items-center overflow-hidden mt-16 md:mt-20">
         {/* Background - Gradient with Subtle Pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/95 z-0">
           {/* Subtle diagonal lines pattern */}
