@@ -216,13 +216,13 @@ export default function HomePage() {
       </nav>
 
       {/* Floating Join Us Button - Bottom Right */}
-      <Link to="/join" className="fixed bottom-8 right-8 z-40 hidden md:block">
+      <Link to="/join" className="fixed bottom-8 right-8 z-40">
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           transition={{ type: 'spring', stiffness: 300 }}
         >
-          <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90 rounded-full px-6 py-3 shadow-lg">
+          <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90 rounded-full px-4 md:px-6 py-3 shadow-lg text-sm md:text-base">
             Join Us
           </Button>
         </motion.div>
