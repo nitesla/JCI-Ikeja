@@ -147,8 +147,8 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               <Image 
-                src="https://static.wixstatic.com/media/eafe55_41bd7673e8de4ba988b252fcdf51edea~mv2.jpg"
-                alt="JCI Ikeja Local Organization members at community event"
+                src="https://static.wixstatic.com/media/eafe55_72f9aaf32ced4cf888964c0edf963b46~mv2.jpg"
+                alt="Historical photo of JCI Ikeja Local Organization founding"
                 width={600}
                 className="w-full h-96 object-cover rounded-lg"
               />
