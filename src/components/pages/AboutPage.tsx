@@ -218,7 +218,7 @@ export default function AboutPage() {
                   has been a cornerstone of youth leadership development in Lagos State for decades.
                 </p>
                 <p>
-                  Our chapter brings together young professionals aged 18-40 who are passionate about 
+                  Our local organization brings together young professionals aged 18-40 who are passionate about 
                   making a difference in their communities. Through our various programs and initiatives, 
                   we have impacted thousands of lives and created lasting positive change.
                 </p>
@@ -239,7 +239,7 @@ export default function AboutPage() {
           <div className="text-center mb-16">
             <h2 className="font-heading text-4xl text-foreground mb-6">What We Do</h2>
             <p className="font-paragraph text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-              Our chapter focuses on four key areas of development and community impact.
+              Our local organization focuses on four key areas of development and community impact.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
