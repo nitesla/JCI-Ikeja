@@ -137,7 +137,7 @@ export default function AboutPage() {
             <div>
               <h1 className="font-heading text-5xl md:text-6xl text-primary-foreground mb-6 leading-tight">
                 About
-                <span className="block italic">Our Local Organization</span>
+                <span className="block italic">JCI Ikeja</span>
               </h1>
               <p className="font-paragraph text-xl text-primary-foreground/90 leading-relaxed">
                 The Junior Chamber International, Ikeja Local Organization, is a vibrant community of young 
