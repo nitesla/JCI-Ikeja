@@ -410,7 +410,7 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* Message From Chapter President Section */}
+      {/* Message From Local Organization President Section */}
       <motion.section 
         className="bg-secondary py-20"
         initial={{ opacity: 0 }}
@@ -428,7 +428,7 @@ export default function HomePage() {
               <div className="w-80 h-96 rounded-lg overflow-hidden">
                 <Image 
                   src="https://static.wixstatic.com/media/eafe55_f8adaa239fcb4c018cfe974cef66844a~mv2.png"
-                  alt="Chapter President"
+                  alt="Local Organization President"
                   width={320}
                   className="w-full h-full object-cover"
                 />
@@ -747,7 +747,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* Quick Access Section - Explore Our Chapter */}
+      {/* Quick Access Section - Explore Our Local Organization */}
       <motion.section 
         className="bg-background py-20"
         initial={{ opacity: 0 }}
