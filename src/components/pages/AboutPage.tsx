@@ -140,7 +140,7 @@ export default function AboutPage() {
                 <span className="block italic">JCI Ikeja</span>
               </h1>
               <p className="font-paragraph text-xl text-primary-foreground/90 leading-relaxed">
-                The Junior Chamber International, Ikeja Local Organization, is a vibrant community of young 
+                The Junior Chamber International Ikeja, is a vibrant community of young 
                 professionals dedicated to creating positive change through leadership development, 
                 community service, and international cooperation.
               </p>
