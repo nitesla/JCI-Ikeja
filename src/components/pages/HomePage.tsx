@@ -458,7 +458,7 @@ export default function HomePage() {
                 {...fadeInUp}
               >
                 Welcome to JCI Ikeja, where we believe in the power of young leaders to transform communities. 
-                Our chapter is dedicated to fostering excellence, encouraging innovation, and building meaningful 
+                Our local Organization is dedicated to fostering excellence, encouraging innovation, and building meaningful 
                 connections among our members.
               </motion.p>
               <motion.p 
@@ -847,7 +847,7 @@ export default function HomePage() {
                   </motion.div>
                   <h3 className="font-heading text-xl text-secondary-foreground mb-2">Newsletter</h3>
                   <p className="font-paragraph text-secondary-foreground/80">
-                    Stay updated with our latest news and chapter activities.
+                    Stay updated with our latest news and local organization activities.
                   </p>
                 </motion.div>
               </Link>
@@ -1043,7 +1043,7 @@ export default function HomePage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
                 >
-                  Message From Our Chapter President
+                  Message From Our Local Organization President
                 </motion.h2>
                 
                 <motion.div 
@@ -1062,7 +1062,7 @@ export default function HomePage() {
                 >
                   <p className="font-paragraph text-base md:text-lg text-foreground/90 leading-relaxed">
                     Welcome to JCI Ikeja, where we believe in the power of young leaders to transform communities. 
-                    Our chapter is dedicated to fostering excellence, encouraging innovation, and building meaningful 
+                    Our local organization is dedicated to fostering excellence, encouraging innovation, and building meaningful 
                     connections among our members.
                   </p>
                   <p className="font-paragraph text-base md:text-lg text-foreground/90 leading-relaxed">
@@ -1071,7 +1071,7 @@ export default function HomePage() {
                     join us on this exciting journey of growth, service, and excellence.
                   </p>
                   <p className="font-paragraph text-base md:text-lg text-foreground/90 leading-relaxed">
-                    As your chapter president, I am committed to ensuring that every member has the opportunity to grow, 
+                    As your local organization president, I am committed to ensuring that every member has the opportunity to grow, 
                     contribute, and make a meaningful difference. Together, we are building a legacy of leadership and 
                     service that will inspire generations to come.
                   </p>
@@ -1106,7 +1106,7 @@ export default function HomePage() {
         <div className="max-w-[100rem] mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="font-heading text-xl text-primary-foreground mb-4">JCI Ikeja Chapter</h3>
+              <h3 className="font-heading text-xl text-primary-foreground mb-4">JCI Ikeja</h3>
               <p className="font-paragraph text-primary-foreground/80 leading-relaxed">
                 Empowering young leaders to create positive change in JCI Ikeja and beyond through 
                 community service and professional development.
