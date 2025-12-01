@@ -763,7 +763,7 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true, margin: '-100px' }}
           >
-            Explore Our Chapter
+            Explore Our Local Organization
           </motion.h2>
           <motion.div 
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
