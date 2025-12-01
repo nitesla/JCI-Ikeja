@@ -444,7 +444,7 @@ export default function HomePage() {
                 className="font-heading text-4xl md:text-5xl text-secondary-foreground mb-4"
                 {...fadeInUp}
               >
-                Message From Our Local Organization President
+                Message From The President
               </motion.h2>
               <motion.div 
                 className="w-16 h-1 bg-primary mb-6"
@@ -1043,7 +1043,7 @@ export default function HomePage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
                 >
-                  Message From Our Local Organization President
+                  Message From The President
                 </motion.h2>
                 
                 <motion.div 
