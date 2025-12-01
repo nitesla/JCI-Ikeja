@@ -1026,7 +1026,7 @@ export default function HomePage() {
                 <div className="w-full aspect-[3/4] rounded-lg overflow-hidden shadow-2xl">
                   <Image 
                     src="https://static.wixstatic.com/media/eafe55_f8adaa239fcb4c018cfe974cef66844a~mv2.png"
-                    alt="Chapter President JCIN Amb. Olubunmi Grace Fadare"
+                    alt="JCIN Amb. Olubunmi Grace Fadare"
                     width={400}
                     className="w-full h-full object-cover"
                   />
