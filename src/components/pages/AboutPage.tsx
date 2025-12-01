@@ -147,7 +147,7 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               <Image 
-                src="https://static.wixstatic.com/media/eafe55_5b5bd1c27eb74759a8a45415a0d71b86~mv2.png?originWidth=576&originHeight=384"
+                src="https://static.wixstatic.com/media/eafe55_41bd7673e8de4ba988b252fcdf51edea~mv2.jpg"
                 alt="JCI Ikeja Local Organization members at community event"
                 width={600}
                 className="w-full h-96 object-cover rounded-lg"
@@ -204,7 +204,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Image 
-                src="https://static.wixstatic.com/media/eafe55_91ec02a4786749aaba5c184212b2d5d6~mv2.png?originWidth=576&originHeight=384"
+                src="https://static.wixstatic.com/media/eafe55_72f9aaf32ced4cf888964c0edf963b46~mv2.jpg"
                 alt="Historical photo of JCI Ikeja Local Organization founding"
                 width={600}
                 className="w-full h-96 object-cover rounded-lg"
