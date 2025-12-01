@@ -204,8 +204,8 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Image 
-                src="https://static.wixstatic.com/media/eafe55_72f9aaf32ced4cf888964c0edf963b46~mv2.jpg"
-                alt="Historical photo of JCI Ikeja Local Organization founding"
+                src="https://static.wixstatic.com/media/eafe55_ab251fa624014115825988f9a4301ba9~mv2.png?originWidth=576&originHeight=384"
+                alt="Community event photo of JCI Ikeja members in action"
                 width={600}
                 className="w-full h-96 object-cover rounded-lg"
               />
