@@ -169,7 +169,7 @@ export default function NewsletterPage() {
         <section className="bg-primary py-20">
           <div className="max-w-[100rem] mx-auto px-6 text-center">
             <h1 className="font-heading text-5xl md:text-6xl text-primary-foreground mb-6 leading-tight">
-              Local Organization
+              JCI Ikeja
               <span className="block italic">Newsletter</span>
             </h1>
             <p className="font-paragraph text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
