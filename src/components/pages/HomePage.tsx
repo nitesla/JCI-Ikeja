@@ -1096,7 +1096,7 @@ export default function HomePage() {
             <div>
               <h3 className="font-heading text-xl text-primary-foreground mb-4">JCI Ikeja</h3>
               <p className="font-paragraph text-primary-foreground/80 leading-relaxed">
-                Empowering young leaders to create positive change in JCI Ikeja and beyond through 
+                Empowering young leaders to create positive change in Ikeja and beyond through 
                 community service and professional development.
               </p>
             </div>
