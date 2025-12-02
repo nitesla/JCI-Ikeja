@@ -357,7 +357,7 @@ export default function EventsPage() {
         <div className="max-w-[100rem] mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="font-heading text-xl text-primary-foreground mb-4">JCI Ikeja Local Organization</h3>
+              <h3 className="font-heading text-xl text-primary-foreground mb-4">JCI Ikeja</h3>
               <p className="font-paragraph text-primary-foreground/80 leading-relaxed">
                 Empowering young leaders to create positive change in Ikeja and beyond through 
                 community service and professional development.
