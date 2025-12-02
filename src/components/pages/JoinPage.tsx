@@ -105,7 +105,7 @@ export default function JoinPage() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-64 bg-primary border-l border-primary-foreground/20">
-                <div className="flex flex-col space-y-6 mt-8">
+                <div className="flex flex-col space-y-6 mt-20">
                   <Link 
                     to="/" 
                     onClick={() => setIsMobileMenuOpen(false)}
