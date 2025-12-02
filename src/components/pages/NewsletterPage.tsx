@@ -213,7 +213,7 @@ export default function NewsletterPage() {
             <div className="text-center mb-16">
               <h2 className="font-heading text-4xl text-foreground mb-6">Newsletter Archive</h2>
               <p className="font-paragraph text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
-                Browse through our past newsletters to catch up on chapter news and activities.
+                Browse through our past newsletters to catch up on local organization news and activities.
               </p>
             </div>
 
@@ -313,9 +313,9 @@ export default function NewsletterPage() {
                 <div className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
                   <BookOpen className="h-8 w-8 text-secondary-foreground" />
                 </div>
-                <h3 className="font-heading text-xl text-secondary-foreground mb-4">Chapter News</h3>
+                <h3 className="font-heading text-xl text-secondary-foreground mb-4">JCI Ikeja News</h3>
                 <p className="font-paragraph text-secondary-foreground/80 leading-relaxed">
-                  Stay updated on chapter achievements, member spotlights, and organizational developments.
+                  Stay updated on our achievements, member spotlights, and organizational developments.
                 </p>
               </div>
               <div className="text-center">
@@ -338,7 +338,7 @@ export default function NewsletterPage() {
               Stay Connected
             </h2>
             <p className="font-paragraph text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Join our chapter and be part of a community that's making a real difference in JCI Ikeja and beyond.
+              Join our local organization and be part of a community that's making a real difference in JCI Ikeja and beyond.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/join">
@@ -360,7 +360,7 @@ export default function NewsletterPage() {
           <div className="max-w-[100rem] mx-auto px-6">
             <div className="grid md:grid-cols-3 gap-8">
               <div>
-                <h3 className="font-heading text-xl text-primary-foreground mb-4">JCI Ikeja Chapter</h3>
+                <h3 className="font-heading text-xl text-primary-foreground mb-4">JCI Ikeja</h3>
                 <p className="font-paragraph text-primary-foreground/80 leading-relaxed">
                   Empowering young leaders to create positive change in Ikeja and beyond through 
                   community service and professional development.
@@ -397,7 +397,7 @@ export default function NewsletterPage() {
             </div>
             <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
               <p className="font-paragraph text-primary-foreground/60">
-                © 2024 Junior Chamber International, Ikeja Chapter. All rights reserved.
+                © 2026 Junior Chamber International Ikeja. All rights reserved.
               </p>
             </div>
           </div>
