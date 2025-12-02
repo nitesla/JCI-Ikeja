@@ -363,7 +363,7 @@ export default function JoinPage() {
                 Express Your Interest
               </h2>
               <p className="font-paragraph text-lg text-secondary-foreground/80 leading-relaxed">
-                Fill out the form below to express your interest in joining our chapter. 
+                Fill out the form below to express your interest in joining our local organization. 
                 We'll contact you with more information about membership requirements and next steps.
               </p>
             </div>
@@ -459,7 +459,7 @@ export default function JoinPage() {
                       onChange={(e) => handleInputChange('reasonForInterest', e.target.value)}
                       required
                       className="font-paragraph min-h-[120px]"
-                      placeholder="Tell us about your motivation for joining and what you hope to contribute to our chapter..."
+                      placeholder="Tell us about your motivation for joining and what you hope to contribute to our local organization..."
                     />
                   </div>
 
@@ -569,7 +569,7 @@ export default function JoinPage() {
           </div>
           <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
             <p className="font-paragraph text-primary-foreground/60">
-              © 2024 Junior Chamber International, Ikeja Local Organization. All rights reserved.
+              © 2026 Junior Chamber International Ikeja. All rights reserved.
             </p>
           </div>
         </div>
