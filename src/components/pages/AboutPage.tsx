@@ -337,7 +337,7 @@ export default function AboutPage() {
           </div>
           <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
             <p className="font-paragraph text-primary-foreground/60">
-              © 2026 Junior Chamber International, Ikeja Local Organization. All rights reserved.
+              © 2026 Junior Chamber International Ikeja. All rights reserved.
             </p>
           </div>
         </div>
