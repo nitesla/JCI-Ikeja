@@ -167,7 +167,7 @@ export default function GalleryPage() {
               <span className="block italic">Gallery</span>
             </h1>
             <p className="font-paragraph text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
-              Explore moments from our events, community service projects, and chapter activities 
+              Explore moments from our events, community service projects, and local organization activities 
               that showcase our commitment to positive change.
             </p>
           </div>
@@ -363,7 +363,7 @@ export default function GalleryPage() {
             </div>
             <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
               <p className="font-paragraph text-primary-foreground/60">
-                © 2024 Junior Chamber International, Ikeja Local Organization. All rights reserved.
+                © 2026 Junior Chamber International Ikeja. All rights reserved.
               </p>
             </div>
           </div>
