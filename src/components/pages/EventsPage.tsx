@@ -334,7 +334,7 @@ export default function EventsPage() {
             Get Involved
           </h2>
           <p className="font-paragraph text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Join our chapter and participate in meaningful events and projects that make 
+            Join our local organization and participate in meaningful events and projects that make 
             a difference in our community.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -394,7 +394,7 @@ export default function EventsPage() {
           </div>
           <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
             <p className="font-paragraph text-primary-foreground/60">
-              © 2024 Junior Chamber International, Ikeja Local Organization. All rights reserved.
+              © 2026 Junior Chamber International Ikeja. All rights reserved.
             </p>
           </div>
         </div>
