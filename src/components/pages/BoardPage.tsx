@@ -268,7 +268,7 @@ export default function BoardPage() {
             Interested in Leadership?
           </h2>
           <p className="font-paragraph text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Join our chapter and develop your leadership skills while making a positive impact 
+            Join our local organization and develop your leadership skills while making a positive impact 
             in your community.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -328,7 +328,7 @@ export default function BoardPage() {
           </div>
           <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
             <p className="font-paragraph text-primary-foreground/60">
-              © 2024 Junior Chamber International, Ikeja Local Organization. All rights reserved.
+              © 2026 Junior Chamber International Ikeja. All rights reserved.
             </p>
           </div>
         </div>
