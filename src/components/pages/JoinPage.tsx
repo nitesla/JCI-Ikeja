@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { CheckCircle, Users, Heart, Target, Menu, X } from 'lucide-react';
+import { CheckCircle, Users, Heart, Target, Menu } from 'lucide-react';
 import { BaseCrudService } from '@/integrations';
 import { NewMemberInterests } from '@/entities';
 

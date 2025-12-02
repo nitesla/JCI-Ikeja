@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Target, Globe, Heart, Users, Menu, X } from 'lucide-react';
+import { Target, Globe, Heart, Users, Menu } from 'lucide-react';
 
 export default function AboutPage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -55,20 +55,8 @@ export default function AboutPage() {
             </SheetTrigger>
             <SheetContent side="right" className="w-64 bg-primary border-l border-primary-foreground/20 p-0">
               <div className="flex flex-col h-full">
-                {/* Close Button */}
-                <div className="flex justify-end p-4">
-                  <Button 
-                    variant="ghost" 
-                    size="icon" 
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-cyan-400 hover:bg-primary-foreground/10 hover:text-cyan-300 transition-colors"
-                  >
-                    <X className="h-6 w-6" />
-                  </Button>
-                </div>
-                
                 {/* Menu Items */}
-                <div className="flex flex-col space-y-6 px-6 pb-8">
+                <div className="flex flex-col space-y-6 px-6 pb-8 pt-4">
                   <Link 
                     to="/" 
                     onClick={() => setIsMobileMenuOpen(false)}
