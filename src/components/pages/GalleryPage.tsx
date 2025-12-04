@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Camera, Calendar, User, Menu, X } from 'lucide-react';
+import { Camera, Calendar, User, Menu, X, ExternalLink } from 'lucide-react';
 import { BaseCrudService } from '@/integrations';
 import { GalleryImages } from '@/entities';
 
@@ -275,9 +275,21 @@ export default function GalleryPage() {
                     {selectedImage.eventName && (
                       <div>
                         <h4 className="font-heading text-sm text-foreground/60 mb-1">Event</h4>
-                        <p className="font-paragraph text-foreground">
-                          {selectedImage.eventName}
-                        </p>
+                        <div className="flex flex-col gap-3">
+                          <p className="font-paragraph text-foreground">
+                            {selectedImage.eventName}
+                          </p>
+                          <a 
+                            href="https://tspimages.pixieset.com/41stconventionandinvestitureof42ndpresident/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90 flex items-center gap-2 h-9 px-3">
+                              View Gallery
+                              <ExternalLink className="h-4 w-4" />
+                            </Button>
+                          </a>
+                        </div>
                       </div>
                     )}
                     {selectedImage.photographer && (
