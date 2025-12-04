@@ -253,6 +253,16 @@ export default function GalleryPage() {
                 )}
 
                 <div className="space-y-4">
+                  {selectedImage.photographer && (
+                    <div>
+                      <h4 className="font-heading text-sm text-foreground/60 mb-1">Photographer</h4>
+                      <p className="font-paragraph text-foreground flex items-center gap-2">
+                        <User className="h-4 w-4" />
+                        {selectedImage.photographer}
+                      </p>
+                    </div>
+                  )}
+
                   {selectedImage.description && (
                     <div>
                       <h3 className="font-heading text-lg text-foreground mb-2">Description</h3>
@@ -290,15 +300,6 @@ export default function GalleryPage() {
                             </Button>
                           </a>
                         </div>
-                      </div>
-                    )}
-                    {selectedImage.photographer && (
-                      <div>
-                        <h4 className="font-heading text-sm text-foreground/60 mb-1">Photographer</h4>
-                        <p className="font-paragraph text-foreground flex items-center gap-2">
-                          <User className="h-4 w-4" />
-                          {selectedImage.photographer}
-                        </p>
                       </div>
                     )}
                   </div>
