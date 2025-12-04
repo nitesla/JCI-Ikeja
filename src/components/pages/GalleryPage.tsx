@@ -253,16 +253,7 @@ export default function GalleryPage() {
                 )}
 
                 <div className="space-y-4">
-                  {selectedImage.photographer && (
-                    <div>
-                      <h4 className="font-heading text-sm text-foreground/60 mb-1">Photographer</h4>
-                      <p className="font-paragraph text-foreground flex items-center gap-2">
-                        <User className="h-4 w-4" />
-                        {selectedImage.photographer}
-                      </p>
-                    </div>
-                  )}
-
+                  {/* Description Section */}
                   {selectedImage.description && (
                     <div>
                       <h3 className="font-heading text-lg text-foreground mb-2">Description</h3>
@@ -272,6 +263,7 @@ export default function GalleryPage() {
                     </div>
                   )}
 
+                  {/* Date Taken and Event Row */}
                   <div className="grid md:grid-cols-2 gap-4">
                     {selectedImage.dateTaken && (
                       <div>
@@ -285,21 +277,36 @@ export default function GalleryPage() {
                     {selectedImage.eventName && (
                       <div>
                         <h4 className="font-heading text-sm text-foreground/60 mb-1">Event</h4>
-                        <div className="flex flex-col gap-3">
-                          <p className="font-paragraph text-foreground">
-                            {selectedImage.eventName}
-                          </p>
-                          <a 
-                            href="https://tspimages.pixieset.com/41stconventionandinvestitureof42ndpresident/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90 flex items-center gap-2 h-9 px-3">
-                              View Gallery
-                              <ExternalLink className="h-4 w-4" />
-                            </Button>
-                          </a>
-                        </div>
+                        <p className="font-paragraph text-foreground">
+                          {selectedImage.eventName}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Photographer and View Gallery Button Row */}
+                  <div className="grid md:grid-cols-2 gap-4 items-start">
+                    {selectedImage.photographer && (
+                      <div>
+                        <h4 className="font-heading text-sm text-foreground/60 mb-1">Photographer</h4>
+                        <p className="font-paragraph text-foreground flex items-center gap-2">
+                          <User className="h-4 w-4" />
+                          {selectedImage.photographer}
+                        </p>
+                      </div>
+                    )}
+                    {selectedImage.eventName && (
+                      <div className="flex justify-start md:justify-end">
+                        <a 
+                          href="https://tspimages.pixieset.com/41stconventionandinvestitureof42ndpresident/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90 flex items-center gap-2 h-9 px-3">
+                            View Gallery
+                            <ExternalLink className="h-4 w-4" />
+                          </Button>
+                        </a>
                       </div>
                     )}
                   </div>
