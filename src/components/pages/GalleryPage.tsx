@@ -229,10 +229,7 @@ export default function GalleryPage() {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="p-6">
-                <div className="flex justify-between items-start mb-4">
-                  <h2 className="font-heading text-2xl text-foreground">
-                    {selectedImage.title || 'Image'}
-                  </h2>
+                <div className="flex justify-end mb-4">
                   <button 
                     onClick={() => setSelectedImage(null)}
                     className="text-foreground/60 hover:text-foreground transition-colors"
@@ -284,32 +281,21 @@ export default function GalleryPage() {
                     )}
                   </div>
 
-                  {/* Photographer and View Gallery Button Row */}
-                  <div className="grid md:grid-cols-2 gap-4 items-start">
-                    {selectedImage.photographer && (
-                      <div>
-                        <h4 className="font-heading text-sm text-foreground/60 mb-1">Photographer</h4>
-                        <p className="font-paragraph text-foreground flex items-center gap-2">
-                          <User className="h-4 w-4" />
-                          {selectedImage.photographer}
-                        </p>
-                      </div>
-                    )}
-                    {selectedImage.eventName && (
-                      <div className="flex justify-start md:justify-end">
-                        <a 
-                          href="https://tspimages.pixieset.com/41stconventionandinvestitureof42ndpresident/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90 flex items-center gap-2 h-9 px-3">
-                            View Gallery
-                            <ExternalLink className="h-4 w-4" />
-                          </Button>
-                        </a>
-                      </div>
-                    )}
-                  </div>
+                  {/* View Gallery Button */}
+                  {selectedImage.eventName && (
+                    <div className="flex justify-start">
+                      <a 
+                        href="https://tspimages.pixieset.com/41stconventionandinvestitureof42ndpresident/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90 flex items-center gap-2 h-9 px-3">
+                          View Gallery
+                          <ExternalLink className="h-4 w-4" />
+                        </Button>
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
