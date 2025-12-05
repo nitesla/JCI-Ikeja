@@ -168,7 +168,7 @@ export default function GalleryPage() {
               <span className="block italic">Gallery</span>
             </h1>
             <p className="font-paragraph text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
-              Explore moments from our events, community service projects, and local organization activities 
+              Explore moments from our meetings, events, community service projects, and local organization activities 
               that showcase our commitment to positive change.
             </p>
           </div>
