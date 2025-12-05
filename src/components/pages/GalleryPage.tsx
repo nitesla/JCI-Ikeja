@@ -17,7 +17,9 @@ export default function GalleryPage() {
     const fetchGalleryImages = async () => {
       try {
         const { items } = await BaseCrudService.getAll<GalleryImages>('galleryimages');
-        setGalleryImages(items);
+        // Filter to show only the '41ST CONVENTION & INVESTITURE OF 42ND PRESIDENT' card
+        const filteredItems = items.filter(item => item.title === '41ST CONVENTION & INVESTITURE OF 42ND PRESIDENT');
+        setGalleryImages(filteredItems);
       } catch (error) {
         console.error('Error fetching gallery images:', error);
       } finally {
