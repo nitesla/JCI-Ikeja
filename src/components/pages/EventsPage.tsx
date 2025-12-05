@@ -128,7 +128,7 @@ export default function EventsPage() {
             <SheetContent side="right" className="w-64 bg-primary border-l border-primary-foreground/20 p-0">
               <div className="flex flex-col h-full">
                 {/* Menu Items */}
-                <div className="flex flex-col space-y-6 px-6 pb-8 pt-4">
+                <div className="flex flex-col space-y-6 px-6 pb-8 pt-20">
                   <Link 
                     to="/" 
                     onClick={() => setIsMobileMenuOpen(false)}
