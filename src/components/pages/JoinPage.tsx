@@ -100,7 +100,7 @@ export default function JoinPage() {
             {/* Mobile Menu Button */}
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild className="md:hidden">
-                <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
+                <Button variant="ghost" size="icon" className="text-cyan-400 hover:bg-primary-foreground/10 hover:text-cyan-300 transition-colors">
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
