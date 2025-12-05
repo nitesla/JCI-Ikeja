@@ -286,7 +286,7 @@ export default function GalleryPage() {
                   {selectedImage.eventName && (
                     <div className="flex justify-start">
                       <a 
-                        href="https://tspimages.pixieset.com/41stconventionandinvestitureof42ndpresident/"
+                        href={selectedImage.galleryUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
