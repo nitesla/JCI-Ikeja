@@ -62,7 +62,7 @@ export default function JoinPage() {
     return (
       <div className="min-h-screen bg-background">
         {/* Navigation */}
-        <nav className="w-full px-4 md:px-6 py-4 flex justify-between items-center bg-primary">
+        <nav className="fixed top-0 left-0 right-0 w-full px-4 md:px-6 py-4 flex justify-between items-center bg-primary shadow-lg z-50">
           <div className="flex items-center space-x-4 md:space-x-8">
             <Link to="/" className="flex items-center">
               <Image 
