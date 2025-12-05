@@ -17,9 +17,8 @@ export default function GalleryPage() {
     const fetchGalleryImages = async () => {
       try {
         const { items } = await BaseCrudService.getAll<GalleryImages>('galleryimages');
-        // Filter to show only the '41ST CONVENTION & INVESTITURE OF 42ND PRESIDENT' card
-        const filteredItems = items.filter(item => item.title === '41ST CONVENTION & INVESTITURE OF 42ND PRESIDENT');
-        setGalleryImages(filteredItems);
+        // Display all gallery images including AGM 2025 CSM Card
+        setGalleryImages(items);
       } catch (error) {
         console.error('Error fetching gallery images:', error);
       } finally {
