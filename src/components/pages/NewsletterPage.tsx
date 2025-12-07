@@ -302,7 +302,7 @@ export default function NewsletterPage() {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Calendar className="h-8 w-8 text-secondary-foreground" />
+                  <Calendar className="h-8 w-8 text-cyan-400" />
                 </div>
                 <h3 className="font-heading text-xl text-secondary-foreground mb-4">Event Updates</h3>
                 <p className="font-paragraph text-secondary-foreground/80 leading-relaxed">
@@ -311,7 +311,7 @@ export default function NewsletterPage() {
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
-                  <BookOpen className="h-8 w-8 text-secondary-foreground" />
+                  <BookOpen className="h-8 w-8 text-cyan-400" />
                 </div>
                 <h3 className="font-heading text-xl text-secondary-foreground mb-4">JCI Ikeja News</h3>
                 <p className="font-paragraph text-secondary-foreground/80 leading-relaxed">
@@ -320,7 +320,7 @@ export default function NewsletterPage() {
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
-                  <ExternalLink className="h-8 w-8 text-secondary-foreground" />
+                  <ExternalLink className="h-8 w-8 text-cyan-400" />
                 </div>
                 <h3 className="font-heading text-xl text-secondary-foreground mb-4">Opportunities</h3>
                 <p className="font-paragraph text-secondary-foreground/80 leading-relaxed">
