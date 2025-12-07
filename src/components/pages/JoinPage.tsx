@@ -500,7 +500,7 @@ export default function JoinPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="w-12 h-12 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-foreground font-heading text-xl font-bold">18</span>
+                  <span className="text-cyan-400 font-heading text-xl font-bold">18</span>
                 </div>
                 <h3 className="font-heading text-lg text-foreground mb-2">Age Range</h3>
                 <p className="font-paragraph text-foreground/80">
