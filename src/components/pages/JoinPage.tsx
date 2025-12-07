@@ -167,7 +167,7 @@ export default function JoinPage() {
         {/* Success Message */}
         <div className="min-h-[80vh] flex items-center justify-center px-6">
           <div className="text-center max-w-2xl">
-            <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-6" />
+            <CheckCircle className="h-16 w-16 text-cyan-400 mx-auto mb-6" />
             <h1 className="font-heading text-4xl text-foreground mb-4">Thank You!</h1>
             <p className="font-paragraph text-xl text-foreground/80 mb-8 leading-relaxed">
               Your membership interest has been submitted successfully. Our team will review your 

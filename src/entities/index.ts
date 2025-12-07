@@ -71,6 +71,8 @@ export interface GalleryImages {
   eventName?: string;
   /** @wixFieldType text */
   photographer?: string;
+  /** @wixFieldType url */
+  galleryUrl?: string;
 }
 
 
