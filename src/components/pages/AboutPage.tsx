@@ -233,7 +233,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-secondary p-8 rounded-lg text-center">
               <div className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8 text-secondary-foreground" />
+                <Users className="h-8 w-8 text-cyan-400" />
               </div>
               <h3 className="font-heading text-xl text-secondary-foreground mb-4">Leadership Development</h3>
               <p className="font-paragraph text-secondary-foreground/80">
@@ -242,7 +242,7 @@ export default function AboutPage() {
             </div>
             <div className="bg-secondary p-8 rounded-lg text-center">
               <div className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="h-8 w-8 text-secondary-foreground" />
+                <Heart className="h-8 w-8 text-cyan-400" />
               </div>
               <h3 className="font-heading text-xl text-secondary-foreground mb-4">Community Service</h3>
               <p className="font-paragraph text-secondary-foreground/80">
@@ -251,7 +251,7 @@ export default function AboutPage() {
             </div>
             <div className="bg-secondary p-8 rounded-lg text-center">
               <div className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
-                <Globe className="h-8 w-8 text-secondary-foreground" />
+                <Globe className="h-8 w-8 text-cyan-400" />
               </div>
               <h3 className="font-heading text-xl text-secondary-foreground mb-4">International Cooperation</h3>
               <p className="font-paragraph text-secondary-foreground/80">
@@ -260,7 +260,7 @@ export default function AboutPage() {
             </div>
             <div className="bg-secondary p-8 rounded-lg text-center">
               <div className="w-16 h-16 bg-softaccent rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="h-8 w-8 text-secondary-foreground" />
+                <Target className="h-8 w-8 text-cyan-400" />
               </div>
               <h3 className="font-heading text-xl text-secondary-foreground mb-4">Professional Growth</h3>
               <p className="font-paragraph text-secondary-foreground/80">
