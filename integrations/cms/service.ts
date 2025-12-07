@@ -50,6 +50,9 @@ export class BaseCrudService {
     try {
       let query = items.query(collectionId);
 
+      // Sort by sortId
+      query = query.ascending("sortId");
+
       // Use Wix's built-in include() method for referenced data
       if (includeReferencedItems && includeReferencedItems.length > 0) {
         query = query.include(...includeReferencedItems);
