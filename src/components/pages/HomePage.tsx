@@ -548,7 +548,7 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true, margin: '-100px' }}
             >
-              Over 65 years of excellence in developing young leaders and creating lasting impact.
+              Over 41 years of excellence in developing young leaders and creating lasting impact.
             </motion.p>
           </motion.div>
           <motion.div 
