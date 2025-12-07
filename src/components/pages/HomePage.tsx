@@ -584,7 +584,7 @@ export default function HomePage() {
                 <Users2 className="h-10 w-10 text-cyan-400" />
               </motion.div>
               <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">60+</p>
-              <p className="font-paragraph text-primary-foreground/80">Membership</p>
+              <p className="font-paragraph text-primary-foreground/80">Active Members</p>
             </motion.div>
             <motion.div 
               className="text-center"
