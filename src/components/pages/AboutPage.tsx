@@ -151,7 +151,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="text-center">
               <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                <Target className="h-10 w-10 text-primary-foreground" />
+                <Target className="h-10 w-10 text-cyan-400" />
               </div>
               <h2 className="font-heading text-3xl text-foreground mb-4">Our Mission</h2>
               <p className="font-paragraph text-lg text-foreground/80 leading-relaxed">
@@ -162,7 +162,7 @@ export default function AboutPage() {
             </div>
             <div className="text-center">
               <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                <Globe className="h-10 w-10 text-primary-foreground" />
+                <Globe className="h-10 w-10 text-cyan-400" />
               </div>
               <h2 className="font-heading text-3xl text-foreground mb-4">Our Vision</h2>
               <p className="font-paragraph text-lg text-foreground/80 leading-relaxed">
@@ -173,7 +173,7 @@ export default function AboutPage() {
             </div>
             <div className="text-center">
               <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                <Heart className="h-10 w-10 text-primary-foreground" />
+                <Heart className="h-10 w-10 text-cyan-400" />
               </div>
               <h2 className="font-heading text-3xl text-foreground mb-4">Our Values</h2>
               <p className="font-paragraph text-lg text-foreground/80 leading-relaxed">
