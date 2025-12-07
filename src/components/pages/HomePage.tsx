@@ -569,7 +569,7 @@ export default function HomePage() {
               >
                 <Award className="h-10 w-10 text-cyan-400" />
               </motion.div>
-              <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">65+</p>
+              <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">41+</p>
               <p className="font-paragraph text-primary-foreground/80">Years of Excellence</p>
             </motion.div>
             <motion.div 
