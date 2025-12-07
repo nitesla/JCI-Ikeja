@@ -583,7 +583,7 @@ export default function HomePage() {
               >
                 <Users2 className="h-10 w-10 text-cyan-400" />
               </motion.div>
-              <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">5000+</p>
+              <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">60+</p>
               <p className="font-paragraph text-primary-foreground/80">Membership</p>
             </motion.div>
             <motion.div 
@@ -597,8 +597,8 @@ export default function HomePage() {
               >
                 <CheckCircle2 className="h-10 w-10 text-cyan-400" />
               </motion.div>
-              <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">120+</p>
-              <p className="font-paragraph text-primary-foreground/80">Projects Completed</p>
+              <p className="font-heading text-4xl md:text-5xl text-cyan-400 mb-2">7</p>
+              <p className="font-paragraph text-primary-foreground/80">Yearly Projects</p>
             </motion.div>
             <motion.div 
               className="text-center"
