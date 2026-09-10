@@ -15,12 +15,14 @@ export interface BoardofDirectors {
   memberName?: string;
   /** @wixFieldType text */
   memberRole?: string;
-  /** @wixFieldType image */
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   memberImage?: string;
   /** @wixFieldType text */
   memberBio?: string;
   /** @wixFieldType url */
   memberPortfolio?: string;
+  /** @wixFieldType number */
+  sortId?: number;
 }
 
 
@@ -42,7 +44,7 @@ export interface EventsandProjects {
   eventDate?: Date | string;
   /** @wixFieldType text */
   location?: string;
-  /** @wixFieldType image */
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   mainImage?: string;
   /** @wixFieldType text */
   status?: string;
@@ -59,7 +61,7 @@ export interface GalleryImages {
   _id: string;
   _createdDate?: Date;
   _updatedDate?: Date;
-  /** @wixFieldType image */
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   imageFile?: string;
   /** @wixFieldType text */
   title?: string;
@@ -117,7 +119,7 @@ export interface Newsletters {
   summary?: string;
   /** @wixFieldType url */
   newsletterUrl?: string;
-  /** @wixFieldType image */
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   coverImage?: string;
   /** @wixFieldType number */
   issueNumber?: number;
