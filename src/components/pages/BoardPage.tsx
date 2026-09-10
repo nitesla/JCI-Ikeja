@@ -48,8 +48,8 @@ export default function BoardPage() {
             <Image 
               src="https://static.wixstatic.com/media/eafe55_c874b02a5aa242219db0106b6bff4e8b~mv2.png"
               alt="JCI Ikeja Logo"
-              width={160}
-              className="h-12 md:h-16 w-auto"
+              width={200}
+              className="h-16 md:h-20 w-auto"
             />
           </Link>
           <div className="hidden md:flex space-x-6">
