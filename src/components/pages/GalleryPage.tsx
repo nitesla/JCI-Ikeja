@@ -17,8 +17,13 @@ export default function GalleryPage() {
     const fetchGalleryImages = async () => {
       try {
         const { items } = await BaseCrudService.getAll<GalleryImages>('galleryimages');
-        // Display all gallery images including AGM 2025 CSM Card
-        setGalleryImages(items);
+        // Sort by date taken, newest first
+        const sortedItems = items.sort((a, b) => {
+          const dateA = a.dateTaken ? new Date(a.dateTaken).getTime() : 0;
+          const dateB = b.dateTaken ? new Date(b.dateTaken).getTime() : 0;
+          return dateB - dateA; // Newest first
+        });
+        setGalleryImages(sortedItems);
       } catch (error) {
         console.error('Error fetching gallery images:', error);
       } finally {
