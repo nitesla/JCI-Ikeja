@@ -63,11 +63,17 @@ export default function EventsPage() {
     }
   };
 
-  const filteredEvents = events.filter(event => {
-    if (filter === 'upcoming') return isUpcoming(event.eventDate);
-    if (filter === 'past') return !isUpcoming(event.eventDate);
-    return true;
-  });
+  const filteredEvents = events
+    .filter(event => {
+      if (filter === 'upcoming') return isUpcoming(event.eventDate);
+      if (filter === 'past') return !isUpcoming(event.eventDate);
+      return true;
+    })
+    .sort((a, b) => {
+      const dateA = a.eventDate ? new Date(a.eventDate).getTime() : 0;
+      const dateB = b.eventDate ? new Date(b.eventDate).getTime() : 0;
+      return dateB - dateA; // Newest dates first
+    });
 
   if (loading) {
     return (
